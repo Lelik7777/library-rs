@@ -1,0 +1,39 @@
+html {
+  font-size: $font-size-root;
+  scroll-behavior: smooth;
+}
+
+.body {
+  @include font();
+  @extend %font-primary;
+  color: $color-dark;
+  @extend %custom-scroll;
+
+  &_lock{
+    overflow: hidden;
+  }
+}
+h1{
+  @extend %font-secondary;
+  @include font(4rem, 5rem, $spacing:0.3rem);
+  color:$color-light;
+}
+h2{
+  @extend %font-secondary;
+  @include font(4rem, 4rem, $spacing:0.2rem);
+  color:$color-primary;
+}
+h3{
+  @extend %font-secondary;
+  @include font(3rem, 4rem, $spacing:0.6rem);
+  color:$color-dark;
+}
+h4{
+  @extend %font-secondary;
+  @include font(2rem, 4rem, $spacing:0.2rem);
+  color:$color-dark;
+}
+h5{
+  @include font(1.5rem, 4rem, $spacing:0.2rem,$weight:700);
+  color:$color-dark;
+}
