@@ -38,30 +38,54 @@
       </div>
     </header>
     <main>
-      <section class="welcome">
-      </section>
+      <section class="welcome"></section>
       <section class="about">
-        <h2>About</h2>
-        <p class="about__text">
-          The Brooklyn Library is a free workspace, a large number of books and
-          a cozy coffee shop inside
-        </p>
-        <div class="about__slider">
-          <div class="slider__container"></div>
-          <div class="slider__buttons">
-            <span class="button_round filled"></span
-            ><span class="button_round filled"></span
-            ><span class="button_round filled"></span>
+        <div class="wrapper">
+          <h2 class="about__title">About</h2>
+          <p class="about__text">
+            The Brooklyn Library is a free workspace, a large number of books
+            and a cozy coffee shop inside
+          </p>
+          <div class="about__slider">
+            <div class="slider__wrapper">
+              <div class="slider__button_left"><</div>
+              <div class="slider__container">
+                <img src="./src/assets/images/about/slide_1.png" alt="slide_1" />
+                <img src="./src/assets/images/about/slide_2.png" alt="slide_2" />
+                <img src="./src/assets/images/about/slide_3.png" alt="slide_3" />
+                <img src="./src/assets/images/about/slide_4.png" alt="slide_4" />
+                <img src="./src/assets/images/about/slide_5.png" alt="slide_5" />
+              </div>
+              <div class="slider__button_right">></div>
+            </div>
+
+            <div class="slider__buttons">
+              <span class="button_round filled active"></span
+              ><span class="button_round filled"></span
+              ><span class="button_round filled"></span>
+            </div>
           </div>
         </div>
       </section>
       <section class="favorites">
         <p class="favorites__text">Pick favorites of season</p>
         <div class="favorites__buttons">
-          <span class="button_round point">Winter</span>
-          <span class="button_round">Spring</span>
-          <span class="button_round">Summer</span>
-          <span class="button_round">Autumn</span>
+          <div class="buttons__block">
+            <span class="button_round point"></span>
+            <span>Winter</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Spring</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Summer</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Autumn</span>
+          </div>
         </div>
         <div class="favorites__cards">
           <div class="card">
