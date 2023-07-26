@@ -1,12 +1,12 @@
 @mixin media($resolution: $tablet) {
   @if $resolution==tablet {
-    @media (max-width: $width-content-tablet) {
+    @media (max-width: $width-tablet) {
       @content;
     }
   }
 
   @if $resolution==mobile {
-    @media (max-width: $width-content-mobile) {
+    @media (max-width: $width-mobile) {
       @content;
     }
   } @else {
@@ -21,7 +21,7 @@
   $height: 4rem,
   $weight: 400,
   $style: normal,
-  $spacing: 0.2rem
+  $spacing: 0.02rem
 ) {
   font-size: $size;
   line-height: $height;

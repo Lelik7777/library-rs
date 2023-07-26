@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+  gap:30px;
+}
+.nav__link {
+  color: $color-light;
+  text-decoration: none;
+  @include font(2rem,5rem);
+}
