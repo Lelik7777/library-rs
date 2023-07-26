@@ -1,12 +1,12 @@
-.button_round{
+.button_round {
   display: inline-block;
   width: 17px;
   height: 17px;
   border: 1px solid $color-dark;
   border-radius: 50%;
-  &.filled{
+  &.filled {
     background-color: $color-dark;
-    &.active{
+    &.active {
       background-color: $color-secondary;
     }
   }

@@ -19,14 +19,26 @@
     padding: 0 58px;
   }
 }
-.slider__wrapper{
+.slider__wrapper {
   position: relative;
 }
-.slider__button_left{
-  position: absolute;
+.slider__button_left {
+  display: none;
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    left: -58px;
+  }
 }
-.slider__button_right{
-  position: absolute;
+.slider__button_right {
+  display: none;
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    right: -58px;
+  }
 }
 .slider__container {
   display: flex;
@@ -37,6 +49,7 @@
   transform: translateX(0);
   @include media {
     gap: 70px;
+    margin: 0 0 25px;
   }
 }
 .slider__buttons {
