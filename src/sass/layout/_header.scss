@@ -1,12 +1,14 @@
+.header {
+  background-color: $color-primary;
+}
 .header__wrapper {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   color: $color-light;
-  background-color: $color-primary;
 }
-.header__title { 
+.header__title {
   @extend %font-secondary;
   @include font(3rem, 5rem, $spacing: 0.06rem);
 }
