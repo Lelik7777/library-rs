@@ -9,34 +9,50 @@ html {
   color: $color-dark;
   @extend %custom-scroll;
 
-  &_lock{
+  &_lock {
     overflow: hidden;
   }
 }
-h1{
+h1 {
   @extend %font-secondary;
-  @include font(4rem, 5rem, $spacing:0.3rem);
-  color:$color-light;
+  @include font(4rem, 5rem, $spacing: 0.3rem);
+  color: $color-light;
 }
-h2{
+h2 {
   @extend %font-secondary;
-  @include font(4rem, 4rem, $spacing:0.2rem);
-  color:$color-primary;
+  @include font(4rem, 4rem, $spacing: 0.2rem);
+  color: $color-primary;
+  &::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: $color-primary;
+    display: inline-block;
+    position: absolute;
+    bottom: -20px;
+    left: 48%;
+  }
 }
-h3{
+h3 {
   @extend %font-secondary;
-  @include font(3rem, 4rem, $spacing:0.6rem);
-  color:$color-dark;
+  @include font(3rem, 4rem, $spacing: 0.6rem);
+  color: $color-dark;
 }
-h4{
+h4 {
   @extend %font-secondary;
-  @include font(2rem, 4rem, $spacing:0.2rem);
-  color:$color-dark;
+  @include font(2rem, 4rem, $spacing: 0.2rem);
+  color: $color-dark;
 }
-h5{
-  @include font(1.5rem, 4rem, $spacing:0.2rem,$weight:700);
-  color:$color-dark;
+h5 {
+  @include font(1.5rem, 4rem, $spacing: 0.2rem, $weight: 700);
+  color: $color-dark;
 }
-h1,h2,h3,h4,h5,p{
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
   margin: 0;
 }

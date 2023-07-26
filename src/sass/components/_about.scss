@@ -1,0 +1,59 @@
+.about {
+  padding: 20px 0 40px;
+}
+.about__title {
+  text-align: center;
+  margin: 0 0 61px;
+  position: relative;
+}
+.about__text {
+  @include font(2rem, $spacing: 0rem);
+  text-align: center;
+  margin: 0 0 20px;
+}
+.about__slider {
+  overflow: hidden;
+  @include media() {
+    width: 568px;
+    margin: auto;
+    padding: 0 58px;
+  }
+}
+.slider__wrapper {
+  position: relative;
+}
+.slider__button_left {
+  display: none;
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    left: -58px;
+  }
+}
+.slider__button_right {
+  display: none;
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    right: -58px;
+  }
+}
+.slider__container {
+  display: flex;
+  gap: 25px;
+  margin: 0 0 40px;
+  position: relative;
+  transition: all 1s;
+  transform: translateX(0);
+  @include media {
+    gap: 70px;
+    margin: 0 0 25px;
+  }
+}
+.slider__buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

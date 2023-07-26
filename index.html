@@ -16,43 +16,86 @@
   </head>
   <body class="body">
     <header class="header">
-      <div class="header title">Brooklyn Public Library</div>
-      <nav class="header__nav">
-        <ul class="nav">
-          <li><a href="#" class="nav__link">About</a></li>
-          <li><a href="#" class="nav__link">Favorites</a></li>
-          <li><a href="#" class="nav__link">Coffee shop</a></li>
-          <li><a href="#" class="nav__link">Contacts</a></li>
-          <li><a href="#" class="nav__link">Library card</a></li>
-        </ul>
-      </nav>
+      <div class="wrapper header__wrapper">
+        <div class="header__title">Brooklyn Public Library</div>
+        <div class="header__right">
+          <nav class="header__nav">
+            <ul class="nav">
+              <li><a href="#" class="nav__link">About</a></li>
+              <li><a href="#" class="nav__link">Favorites</a></li>
+              <li><a href="#" class="nav__link">Coffee shop</a></li>
+              <li><a href="#" class="nav__link">Contacts</a></li>
+              <li><a href="#" class="nav__link">Library card</a></li>
+            </ul>
+          </nav>
+          <div class="header__profile">
+            <span class="profile__icon"></span>
+            <span class="header__hamburger">
+              <span class="hamburger__line"></span>
+            </span>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-      <section class="welcome">
-        <h1 class="welcome__title">Welcome to the Brooklyn Library</h1>
-      </section>
+      <section class="welcome"></section>
       <section class="about">
-        <h2>About</h2>
-        <p class="about__text">
-          The Brooklyn Library is a free workspace, a large number of books and
-          a cozy coffee shop inside
-        </p>
-        <div class="welcome__slider">
-          <div class="slider__container"></div>
-          <div class="slider__buttons">
-            <span class="button_round filled"></span
-            ><span class="button_round filled"></span
-            ><span class="button_round filled"></span>
+        <div class="wrapper">
+          <h2 class="about__title">About</h2>
+          <p class="about__text">
+            The Brooklyn Library is a free workspace, a large number of books
+            and a cozy coffee shop inside
+          </p>
+          <div class="about__slider">
+            <div class="slider__wrapper">
+              <div class="slider__button_left icon__arrow_left"></div>
+              <div class="slider__container">
+                <img
+                  src="./src/assets/images/about/slide_1.png"
+                  alt="slide_1" />
+                <img
+                  src="./src/assets/images/about/slide_2.png"
+                  alt="slide_2" />
+                <img
+                  src="./src/assets/images/about/slide_3.png"
+                  alt="slide_3" />
+                <img
+                  src="./src/assets/images/about/slide_4.png"
+                  alt="slide_4" />
+                <img
+                  src="./src/assets/images/about/slide_5.png"
+                  alt="slide_5" />
+              </div>
+              <div class="slider__button_right icon__arrow_right"></div>
+            </div>
+
+            <div class="slider__buttons">
+              <span class="button_round filled active"></span
+              ><span class="button_round filled"></span
+              ><span class="button_round filled"></span>
+            </div>
           </div>
         </div>
       </section>
       <section class="favorites">
         <p class="favorites__text">Pick favorites of season</p>
         <div class="favorites__buttons">
-          <span class="button_round point">Winter</span>
-          <span class="button_round">Spring</span>
-          <span class="button_round">Summer</span>
-          <span class="button_round">Autumn</span>
+          <div class="buttons__block">
+            <span class="button_round point"></span>
+            <span>Winter</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Spring</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Summer</span>
+          </div>
+          <div class="buttons__block">
+            <span class="button_round"></span>
+            <span>Autumn</span>
+          </div>
         </div>
         <div class="favorites__cards">
           <div class="card">
@@ -288,8 +331,14 @@
       </div>
       <div class="footer__bottom">
         <div>2023</div>
-        <div><a href="https://rs.school/js-stage0/" target="_blank">The Rolling Scopes School</a></div>
-        <div><a href="https://github.com/Lelik7777" target="_blank">Lelik7777</a></div>
+        <div>
+          <a href="https://rs.school/js-stage0/" target="_blank"
+            >The Rolling Scopes School</a
+          >
+        </div>
+        <div>
+          <a href="https://github.com/Lelik7777" target="_blank">Lelik7777</a>
+        </div>
       </div>
     </footer>
   </body>
