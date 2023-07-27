@@ -1,0 +1,26 @@
+%hover {
+  &:hover,&:active {
+    text-shadow: 1px 0 0 $color-dark;
+    //font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.favorites__input {
+  width: 17px;
+  height: 17px;
+  accent-color: $color-dark;
+
+  @extend %hover;
+}
+.favorites__label {
+  @extend %hover;
+  &.active{
+    font-weight: 700;
+  }
+}
+.inputs__block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
