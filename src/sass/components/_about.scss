@@ -54,6 +54,12 @@
 }
 .slider__buttons {
   display: flex;
-  gap: 10px;
   justify-content: center;
+ // gap: 10px;
+}
+.button__container{
+  width: 26px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
