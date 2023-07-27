@@ -1,0 +1,40 @@
+%hover {
+  &:hover,
+  &:active {
+    text-shadow: 1px 0 0 $color-dark;
+    cursor: pointer;
+  }
+}
+
+.favorites__wrapper {
+  padding: 0 20px 0 67px;
+}
+
+.favorites__text {
+  @include font(2rem, normal, 700, $spacing: 0);
+  margin: 0 0 40px;
+}
+
+.favorites__inputs {
+  display: flex;
+  gap: 90px;
+}
+
+.favorites__input {
+  width: 17px;
+  height: 17px;
+  accent-color: $color-dark;
+
+  @extend %hover;
+}
+
+.favorites__label {
+  @include font(2rem, normal, 700, $spacing: 0);
+  @extend %hover;
+}
+
+.inputs__block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

@@ -3,6 +3,7 @@
     lightgray 50% / cover no-repeat;
   height: 600px;
   width: 100%;
+  
   @include media(){
     background: url("../assets/images/welcome/Welcome_768.svg"),
     lightgray 50% / cover no-repeat;
