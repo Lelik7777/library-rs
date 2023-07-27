@@ -1,4 +1,5 @@
 @mixin media($resolution: $tablet) {
+
   @if $resolution==tablet {
     @media (max-width: $width-tablet) {
       @content;
@@ -9,6 +10,7 @@
     @media (max-width: $width-mobile) {
       @content;
     }
+    
   } @else {
     @media (max-width: $resolution) {
       @content;

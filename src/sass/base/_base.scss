@@ -13,16 +13,18 @@ html {
     overflow: hidden;
   }
 }
+
 h1 {
   @extend %font-secondary;
   @include font(3rem, 5rem, $spacing: 0.06rem);
 }
+
 h2 {
   @extend %font-secondary;
   @include font(4rem, 4rem, $spacing: 0.2rem);
   color: $color-primary;
   position:relative;
-  
+
   &::after {
     content: "";
     width: 50px;
@@ -34,20 +36,24 @@ h2 {
     left: 48%;
   }
 }
+
 h3 {
   @extend %font-secondary;
   @include font(3rem, 4rem, $spacing: 0.6rem);
   color: $color-dark;
 }
+
 h4 {
   @extend %font-secondary;
   @include font(2rem, 4rem, $spacing: 0.2rem);
   color: $color-dark;
 }
+
 h5 {
   @include font(1.5rem, 4rem, $spacing: 0.2rem, $weight: 700);
   color: $color-dark;
 }
+
 h1,
 h2,
 h3,

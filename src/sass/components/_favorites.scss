@@ -1,9 +1,23 @@
 %hover {
-  &:hover,&:active {
+  &:hover,
+  &:active {
     text-shadow: 1px 0 0 $color-dark;
-    //font-weight: 700;
     cursor: pointer;
   }
+}
+
+.favorites__wrapper {
+  padding: 0 20px 0 67px;
+}
+
+.favorites__text {
+  @include font(2rem, normal, 700, $spacing: 0);
+  margin: 0 0 40px;
+}
+
+.favorites__inputs {
+  display: flex;
+  gap: 90px;
 }
 
 .favorites__input {
@@ -13,12 +27,12 @@
 
   @extend %hover;
 }
+
 .favorites__label {
+  @include font(2rem, normal, 700, $spacing: 0);
   @extend %hover;
-  &.active{
-    font-weight: 700;
-  }
 }
+
 .inputs__block {
   display: flex;
   align-items: center;
