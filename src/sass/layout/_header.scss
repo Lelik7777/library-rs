@@ -8,10 +8,7 @@
   justify-content: space-between;
   color: $color-light;
 }
-.header__title {
-  @extend %font-secondary;
-  @include font(3rem, 5rem, $spacing: 0.06rem);
-}
+
 .header__right {
   display: flex;
   gap: 40px;

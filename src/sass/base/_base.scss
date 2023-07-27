@@ -15,13 +15,14 @@ html {
 }
 h1 {
   @extend %font-secondary;
-  @include font(4rem, 5rem, $spacing: 0.3rem);
-  color: $color-light;
+  @include font(3rem, 5rem, $spacing: 0.06rem);
 }
 h2 {
   @extend %font-secondary;
   @include font(4rem, 4rem, $spacing: 0.2rem);
   color: $color-primary;
+  position:relative;
+  
   &::after {
     content: "";
     width: 50px;
