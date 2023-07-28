@@ -10,7 +10,7 @@
     @media (max-width: $width-mobile) {
       @content;
     }
-    
+
   } @else {
     @media (max-width: $resolution) {
       @content;
@@ -23,7 +23,7 @@
   $height: 4rem,
   $weight: 400,
   $style: normal,
-  $spacing: 0.02rem
+  $spacing: 0.2rem
 ) {
   font-size: $size;
   line-height: $height;

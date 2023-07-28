@@ -1,5 +1,8 @@
 .about {
   padding: 20px 0 40px;
+  @include media{
+    padding: 20px 0 45px;
+  }
 }
 
 .about__title {
@@ -14,6 +17,7 @@
   margin: 0 0 20px;
 }
 
+//slider
 .about__slider {
   overflow: hidden;
 
