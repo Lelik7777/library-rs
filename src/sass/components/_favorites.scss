@@ -6,8 +6,25 @@
   }
 }
 
+.favorites{
+  padding: 0 0 164px;
+}
+
 .favorites__wrapper {
-  padding: 0 20px 0 67px;
+  padding: 0 12px 0 67px;
+
+  @include media() {
+    padding: 0 48px 0 20px;
+  }
+}
+
+.favorites__title {
+  display: none;
+  text-align: center;
+  @include media {
+    display: block;
+    margin: 0 0 60px 30px;
+  }
 }
 
 .favorites__text {
@@ -15,9 +32,11 @@
   margin: 0 0 38px;
 }
 
+// radio buttons
 .favorites__inputs {
   display: flex;
   gap: 78px;
+  margin: 0 0 30px;
 }
 
 .favorites__input {
@@ -31,11 +50,64 @@
 .favorites__label {
   @include font(2rem, normal, 700, $spacing: 0);
   @extend %hover;
-  display:flex;
+  display: flex;
   align-items: center;
-  gap:20px;
+  gap: 20px;
   padding: 5px;
 }
-.winter{
-  padding-left:0;
+.winter {
+  padding-left: 0;
+}
+
+//cards
+.favorites__cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  outline: 1px solid $color-dark;
+  max-width: 550px;
+  padding: 20px 0 15px 20px;
+  flex-basis: 50%;
+}
+
+.card__title,
+.card_subtitle {
+  margin: 0 0 20px;
+}
+
+.card_subtitle {
+  max-width: text-content;
+
+  & span {
+    text-transform: capitalize;
+  }
+}
+
+.card__text {
+  max-width: 355px;
+  text-transform: capitalize;
+  letter-spacing: 0.2rem;
+  margin: 0 0 15px;
+}
+
+.card__img {
+  position: absolute;
+  bottom: 0;
+  left: 71%;
+}
+
+.card__buttons {
+  display: flex;
+}
+
+.card__button {
+  padding: 9px 27px;
 }

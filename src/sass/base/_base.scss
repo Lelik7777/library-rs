@@ -23,7 +23,7 @@ h2 {
   @extend %font-secondary;
   @include font(4rem, 4rem, $spacing: 0.2rem);
   color: $color-primary;
-  position:relative;
+  position: relative;
 
   &::after {
     content: "";
@@ -34,6 +34,10 @@ h2 {
     position: absolute;
     bottom: -20px;
     left: 48%;
+
+    @include media {
+      left: 46%;
+    }
   }
 }
 
@@ -47,11 +51,23 @@ h4 {
   @extend %font-secondary;
   @include font(2rem, 4rem, $spacing: 0.2rem);
   color: $color-dark;
+
+  &::after {
+    content: "";
+    position: relative;
+    top: 10px;
+    left: -105px;
+    display: inline-block;
+    height: 1px;
+    width: 60px;
+    background-color: $color-secondary;
+  }
 }
 
 h5 {
   @include font(1.5rem, 4rem, $spacing: 0.2rem, $weight: 700);
   color: $color-dark;
+  text-transform: uppercase;
 }
 
 h1,
