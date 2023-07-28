@@ -12,12 +12,12 @@
 
 .favorites__text {
   @include font(2rem, normal, 700, $spacing: 0);
-  margin: 0 0 40px;
+  margin: 0 0 38px;
 }
 
 .favorites__inputs {
   display: flex;
-  gap: 90px;
+  gap: 78px;
 }
 
 .favorites__input {
@@ -31,10 +31,11 @@
 .favorites__label {
   @include font(2rem, normal, 700, $spacing: 0);
   @extend %hover;
-}
-
-.inputs__block {
-  display: flex;
+  display:flex;
   align-items: center;
-  gap: 20px;
+  gap:20px;
+  padding: 5px;
+}
+.winter{
+  padding-left:0;
 }
