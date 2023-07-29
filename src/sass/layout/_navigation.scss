@@ -5,5 +5,6 @@
 .nav__link {
   color: $color-light;
   text-decoration: none;
-  @include font(2rem, 5rem);
+  @include font(2rem, 5rem,$spacing:0.001rem);
+
 }
