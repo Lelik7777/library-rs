@@ -9,7 +9,7 @@
 .favorites {
   padding: 0 0 158px;
 
-  @include media{
+  @include media {
     padding: 0 0 55px;
   }
 }
@@ -41,6 +41,10 @@
   display: flex;
   gap: 78px;
   margin: 0 0 35px;
+
+  @include media(732px) {
+    gap: 7%;
+  }
 }
 
 .favorites__input {
@@ -70,7 +74,7 @@
   flex-wrap: wrap;
   gap: 37px;
 
-  @include media{
+  @include media {
     justify-content: center;
     margin-right: 11px;
   }
@@ -80,8 +84,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   outline: 1px solid $color-dark;
+  position: relative;
   max-width: 550px;
   padding: 15px 0 15px 20px;
   flex-basis: 50%;
@@ -91,7 +95,9 @@
     flex-basis: 100%;
   }
 }
-
+// .card__container{
+//   position: relative;
+// }
 .card__title,
 .card_subtitle {
   margin: 0 0 20px;
@@ -114,10 +120,13 @@
 
 .card__img {
   display: flex;
-
   position: absolute;
   bottom: -1px;
   left: 71%;
+
+  &.right{
+    left: 70.3%;
+  }
 }
 
 .card__buttons {

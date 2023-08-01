@@ -1,6 +1,6 @@
 .about {
   padding: 20px 0 40px;
-  @include media{
+  @include media {
     padding: 20px 0 45px;
   }
 }
@@ -81,4 +81,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  &.last-child {
+    display: none;
+
+    @include media {
+      display: inherit;
+    }
+  }
 }
