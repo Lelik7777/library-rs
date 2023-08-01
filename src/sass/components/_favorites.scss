@@ -9,7 +9,7 @@
 .favorites {
   padding: 0 0 158px;
 
-  @include media{
+  @include media {
     padding: 0 0 55px;
   }
 }
@@ -41,6 +41,10 @@
   display: flex;
   gap: 78px;
   margin: 0 0 35px;
+
+  @include media(732px) {
+    gap: 7%;
+  }
 }
 
 .favorites__input {
@@ -70,7 +74,7 @@
   flex-wrap: wrap;
   gap: 37px;
 
-  @include media{
+  @include media {
     justify-content: center;
     margin-right: 11px;
   }

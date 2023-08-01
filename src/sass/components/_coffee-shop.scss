@@ -1,0 +1,33 @@
+.coffee-shop__title {
+  text-align: center;
+  margin: 0 0 61px;
+}
+
+.coffee-shop__text {
+  @include font(2rem);
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.coffee-shop__price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price__first,
+.price__second {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.price__title {
+  &::after {
+    display: none;
+  }
+}
+
+.price__item{
+  @include font(1.5rem);
+  text-transform: capitalize;
+}

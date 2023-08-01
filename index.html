@@ -79,6 +79,12 @@
               <span class="button__container">
                 <span class="button_round filled"></span>
               </span>
+              <span class="button__container last-child">
+                <span class="button_round filled"></span>
+              </span>
+              <span class="button__container last-child">
+                <span class="button_round filled"></span>
+              </span>
             </div>
           </div>
         </div>
@@ -172,13 +178,15 @@
                   New York and befriends a beautiful witch.
                 </p>
                 <picture class="card__img">
-                  <source srcset="./src/assets/images/favorites/winter/book_cackle_2.png" media="(max-width: 768px)" />
+                  <source
+                    srcset="
+                      ./src/assets/images/favorites/winter/book_cackle_2.png
+                    "
+                    media="(max-width: 768px)" />
                   <img
-                  src="./src/assets/images/favorites/winter/book_cackle.png"
-                  alt="Cackle"
-                  />
+                    src="./src/assets/images/favorites/winter/book_cackle.png"
+                    alt="Cackle" />
                 </picture>
-
               </div>
               <div class="card__buttons">
                 <button class="button card__button">Buy</button>
@@ -219,11 +227,15 @@
                   thrived as the modern world has changed around them.
                 </p>
                 <picture class="card__img">
-                  <source srcset="./src/assets/images/favorites/winter/book_last_queen_2.png" media="(max-width: 768px)" />
+                  <source
+                    srcset="
+                      ./src/assets/images/favorites/winter/book_last_queen_2.png
+                    "
+                    media="(max-width: 768px)" />
                   <img
-                  src="./src/assets/images/favorites/winter/book_last_queen.png"
-                  alt="last Queen"
-                  class="card__img" />
+                    src="./src/assets/images/favorites/winter/book_last_queen.png"
+                    alt="last Queen"
+                    class="card__img" />
                 </picture>
               </div>
               <div class="card__buttons">
@@ -234,84 +246,86 @@
         </div>
       </section>
       <section class="coffee-shop">
-        <h2>Coffee Shop</h2>
-        <div class="coffee-shop__text">
-          In our library, we have of cozy coffee shop, welcoming in customers
-          with frothy cappuccinos and friendly conversation. you can get a
-          favorite book and read in coffee shop. Our barista to cook you best
-          coffee, and also you can try desserts from bakery.
-        </div>
-        <div class="coffee-shop__price">
-          <div class="price__first">
-            <h2 class="price__title">Coffee & Tea</h2>
-            <ul class="price__items">
-              <li class="price__item">
-                <span class="price__title">Cold Brew Coffee</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$3</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Espresso</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$2</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">French Press Pot</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$5</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Cappuccino</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$4</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Hot tea</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$2</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Cold tea</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$2</span>
-              </li>
-            </ul>
+        <div class="wrapper coffee-shop__wrapper">
+          <h2 class="coffee-shop__title">Coffee Shop</h2>
+          <div class="coffee-shop__text">
+            In our library, we have of cozy coffee shop, welcoming in customers
+            with frothy cappuccinos and friendly conversation. you can get a
+            favorite book and read in coffee shop. Our barista to cook you best
+            coffee, and also you can try desserts from bakery.
           </div>
+          <div class="coffee-shop__price">
+            <div class="price__first">
+              <h2 class="price__title">Coffee & Tea</h2>
+              <ul class="price__items">
+                <li class="price__item">
+                  <span class="price__title">Cold Brew Coffee</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$3</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Espresso</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$2</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">French Press Pot</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$5</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Cappuccino</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$4</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Hot tea</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$2</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Cold tea</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$2</span>
+                </li>
+              </ul>
+            </div>
 
-          <div class="price__second">
-            <h2 class="price__title">Desserts & Cakes</h2>
-            <ul class="price__items">
-              <li class="price__item">
-                <span class="price__title">Forest Gateau</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$16</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Blue Moon</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$16</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Truffle Cake</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$16</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Chocolate Cake</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$16</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Poet’s Dream Cake</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$16</span>
-              </li>
-              <li class="price__item">
-                <span class="price__title">Pineapple Cake</span>
-                <span class="price__line"></span>
-                <span class="price__cost">$14</span>
-              </li>
-            </ul>
+            <div class="price__second">
+              <h2 class="price__title">Desserts & Cakes</h2>
+              <ul class="price__items">
+                <li class="price__item">
+                  <span class="price__title">Forest Gateau</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$16</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Blue Moon</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$16</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Truffle Cake</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$16</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Chocolate Cake</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$16</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Poet’s Dream Cake</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$16</span>
+                </li>
+                <li class="price__item">
+                  <span class="price__title">Pineapple Cake</span>
+                  <span class="price__line"></span>
+                  <span class="price__cost">$14</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
