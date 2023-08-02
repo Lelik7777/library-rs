@@ -1,4 +1,4 @@
-.contacts{
+.contacts {
   padding: 0 0 60px;
 }
 
@@ -10,6 +10,11 @@
 .contacts__container {
   display: flex;
   justify-content: space-between;
+
+  @include media {
+    flex-direction: column;
+    gap: 100px;
+  }
 }
 
 .contacts__data {
@@ -30,4 +35,8 @@
 }
 .contacts__map {
   display: flex;
+
+  @include media {
+    align-self: center;
+  }
 }
