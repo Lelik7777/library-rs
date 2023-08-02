@@ -49,9 +49,10 @@
 }
 
 .price__items {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  @include flex(40px);
+  // display: flex;
+  // flex-direction: column;
+  // gap: 40px;
 }
 
 .price__item {
