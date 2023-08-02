@@ -43,7 +43,7 @@ h2 {
 
 h3 {
   @extend %font-secondary;
-  @include font(3rem, 4rem, $spacing: 0.6rem);
+  @include font(3rem, 4rem, $spacing: 0.06rem);
   color: $color-dark;
 }
 
@@ -78,4 +78,9 @@ h5,
 p,
 ul {
   margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
