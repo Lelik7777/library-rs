@@ -1,4 +1,4 @@
-.coffee-shop{
+.coffee-shop {
   padding: 0 0 60px;
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include media{
+  @include media {
     flex-flow: column;
     gap: 40px;
   }
@@ -45,6 +45,11 @@
   }
   &.second {
     text-align: right;
+  }
+
+  &.first,
+  &.second {
+    color: $color-secondary;
   }
 }
 
