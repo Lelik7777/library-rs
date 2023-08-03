@@ -10,6 +10,7 @@
 .contacts__container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   @include media {
     flex-direction: column;
@@ -38,5 +39,9 @@
 
   @include media {
     align-self: center;
+  }
+
+  @include media(720px) {
+    width: 100%;
   }
 }
