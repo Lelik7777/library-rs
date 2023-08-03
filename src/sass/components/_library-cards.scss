@@ -1,5 +1,5 @@
 .library-cards {
-  padding: 0 0 41px;
+  padding: 0 0 37px;
 }
 
 .library-cards__title {
@@ -10,6 +10,7 @@
 .library-cards__forms {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   @include media {
     flex-direction: column;

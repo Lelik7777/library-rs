@@ -36,7 +36,7 @@
   }
 }
 
-@mixin flex($gap, $direction: column) {
+@mixin flex($gap:0, $direction: column) {
   display: flex;
   flex-direction: $direction;
   gap: $gap;

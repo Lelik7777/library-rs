@@ -16,3 +16,27 @@
   width: 14px;
   height: 23px;
 }
+
+.twitter {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-image: url("../assets/icons/twitter.svg");
+  background-repeat: no-repeat;
+}
+
+.inst {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-image: url("../assets/icons/u_instagram.svg");
+  background-repeat: no-repeat;
+}
+
+.facebook {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-image: url("../assets/icons/facebook.svg");
+  background-repeat: no-repeat;
+}
