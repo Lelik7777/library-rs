@@ -1,3 +1,7 @@
+.library-cards {
+  padding: 0 0 41px;
+}
+
 .library-cards__title {
   text-align: center;
   margin: 0 0 61px;
@@ -9,28 +13,72 @@
 }
 
 .form__title {
-
-  &.find{
+  &.find {
     @extend %font-primary;
     text-align: center;
     margin: 0 0 30px;
   }
 }
 
-.form_left{
+.form_left {
   flex-basis: 600px;
 }
 
-.form_left__container{
+.form_left__container {
   border: 3px solid $color-secondary;
 }
 
-.form__inputs{
+.form__inputs {
   background-color: $color-secondary;
   margin: 20px;
   padding: 20px 20px 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.form_right{
+.reader-name,
+.card-number {
+  height: 66px;
+  border-radius: 10px;
+  width: 520px;
+  border: #bb945f;
+  color: $color-input;
+  @extend %font-secondary;
+  @include font(3rem, 5rem, $spacing: 0.06rem);
+  padding: 8px 20px;
+}
+
+.form__button {
+  text-align: center;
+
+  & .button {
+    @include font(2rem, normal, 700, $spacing: 0.1rem);
+    padding: 10px 40px;
+    margin: 0 0 30px;
+  }
+}
+
+.form_right {
   flex-basis: 456px;
+  @include flex(30px);
+  text-align: right;
+}
+
+.form_right__text {
+  @include font(2rem, $spacing: 0.04rem);
+}
+.form__buttons {
+  @include flex(20px, row);
+  justify-content: flex-end;
+  padding-top: 5px;
+
+  & .button {
+    padding: 9px 15px;
+    color: $color-primary;
+
+    &:last-child {
+      padding: 9px 20px;
+    }
+  }
 }
