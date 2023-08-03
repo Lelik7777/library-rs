@@ -10,6 +10,12 @@
 .library-cards__forms {
   display: flex;
   justify-content: space-between;
+
+  @include media {
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+  }
 }
 
 .form__title {
@@ -22,6 +28,10 @@
 
 .form_left {
   flex-basis: 600px;
+
+  @include media {
+    flex-basis: auto;
+  }
 }
 
 .form_left__container {
@@ -63,11 +73,23 @@
   flex-basis: 456px;
   @include flex(30px);
   text-align: right;
+
+  @include media {
+    gap: 35px;
+    align-items: center;
+    flex-basis: auto;
+  }
 }
 
 .form_right__text {
   @include font(2rem, $spacing: 0.04rem);
+
+  @include media {
+    max-width: 600px;
+    text-align: center;
+  }
 }
+
 .form__buttons {
   @include flex(20px, row);
   justify-content: flex-end;
