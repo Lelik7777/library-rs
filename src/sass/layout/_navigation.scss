@@ -1,6 +1,10 @@
 .nav {
   display: flex;
   gap: 30px;
+
+  @include media {
+    flex-direction: column;
+  }
 }
 .nav__link {
   color: $color-light;

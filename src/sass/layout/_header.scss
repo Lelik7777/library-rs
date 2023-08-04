@@ -14,18 +14,35 @@
   gap: 40px;
 }
 .header__nav {
-  @include media() {
-    display: none;
+  transition: all 1s;
+
+  @include media(1024px) {
+    position: fixed;
+    right: -100%;
+    top: 0px;
+    display: flex;
+    height: 540px;
+    width: 332px;
+    background: $color-dark;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.active {
+    right: 0;
   }
 }
+
 .header__profile {
   display: flex;
   align-items: center;
   gap: 40px;
+  z-index: 10;
 }
+
 .header__hamburger {
   display: none;
-  @include media() {
+  @include media(1024px) {
     display: inline-block;
   }
 }

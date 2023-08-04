@@ -10,10 +10,11 @@ $line-height: 3px;
   left: 0;
   background-color: $color-light;
   @extend %transition;
+  z-index: 10;
 }
 
 .header__hamburger {
-  width: 45px; 
+  width: 45px;
   height: 20px;
   display: none;
   position: relative;
@@ -27,19 +28,30 @@ $line-height: 3px;
   &::before {
     @extend %line;
     top: 0;
+    @extend %transition;
   }
 
   &::after {
     @extend %line;
     bottom: 0;
+    @extend %transition;
   }
 
-  &_active {
-    rotate: 90deg;
+  &.active::before {
+    top: calc(50% - $line-height/2);
+    rotate: 45deg;
+  }
+  &.active::after {
+    display: none;
   }
 }
 
 .hamburger__line {
   @extend %line;
   top: calc(50% - $line-height/2);
+  @extend %transition;
+
+  .header__hamburger.active & {
+    rotate: 135deg;
+  }
 }
