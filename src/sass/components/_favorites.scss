@@ -124,7 +124,7 @@
   bottom: -1px;
   left: 71%;
 
-  &.right{
+  &.right {
     left: 70.3%;
   }
 }
@@ -135,4 +135,9 @@
 
 .card__button {
   padding: 9px 27px;
+
+  &.own {
+    border-color: $color-secondary;
+    color: $color-secondary;
+  }
 }

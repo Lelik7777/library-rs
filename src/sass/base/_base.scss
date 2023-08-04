@@ -9,7 +9,7 @@ html {
   color: $color-dark;
   @extend %custom-scroll;
 
-  &_lock {
+  &._lock {
     overflow: hidden;
   }
 }

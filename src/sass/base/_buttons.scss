@@ -18,4 +18,10 @@
   background-color: $color-light;
   @include font(1rem, $height: normal, $weight: 700, $spacing: 0.1rem);
   cursor: pointer;
+  @extend %transition;
+
+  &:hover:enabled {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+  }
 }

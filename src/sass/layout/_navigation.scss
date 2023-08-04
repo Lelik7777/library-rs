@@ -1,10 +1,18 @@
 .nav {
   display: flex;
   gap: 30px;
+
+  @include media {
+    flex-direction: column;
+  }
 }
 .nav__link {
   color: $color-light;
   text-decoration: none;
-  @include font(2rem, 5rem,$spacing:0.001rem);
+  @include font(2rem, 5rem, $spacing: 0.001rem);
+  @extend %transition;
 
+  &:hover {
+    text-shadow: 1px 0 0 $color-light;
+  }
 }

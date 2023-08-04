@@ -25,6 +25,11 @@
 
 .data__title {
   font-weight: 700;
+  @extend %transition;
+ 
+  &:hover{
+    text-shadow: 1px 0 0 $color-primary;
+  }
 
   .data__director & {
     margin: 0 0 20px;
@@ -33,6 +38,15 @@
 
 .data__phones {
   @include flex(20px);
+
+  & a {
+    @extend %transition;
+  }
+
+  & a:hover {
+    text-shadow: 1px 0 0 $color-dark;
+  }
+
 }
 .contacts__map {
   display: flex;
