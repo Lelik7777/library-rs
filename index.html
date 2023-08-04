@@ -21,11 +21,13 @@
         <div class="header__right">
           <nav class="header__nav">
             <ul class="nav">
-              <li><a href="#" class="nav__link">About</a></li>
-              <li><a href="#" class="nav__link">Favorites</a></li>
-              <li><a href="#" class="nav__link">Coffee shop</a></li>
-              <li><a href="#" class="nav__link">Contacts</a></li>
-              <li><a href="#" class="nav__link">Library Card</a></li>
+              <li><a href="#about" class="nav__link">About</a></li>
+              <li><a href="#favorites" class="nav__link">Favorites</a></li>
+              <li><a href="#coffee-shop" class="nav__link">Coffee shop</a></li>
+              <li><a href="#contacts" class="nav__link">Contacts</a></li>
+              <li>
+                <a href="#library-card" class="nav__link">Library Card</a>
+              </li>
             </ul>
           </nav>
           <div class="header__profile">
@@ -39,7 +41,7 @@
     </header>
     <main>
       <section class="welcome"></section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="wrapper">
           <h2 class="about__title">About</h2>
           <p class="about__text">
@@ -89,7 +91,7 @@
           </div>
         </div>
       </section>
-      <section class="favorites">
+      <section class="favorites" id="favorites">
         <div class="favorites__wrapper">
           <h2 class="favorites__title">Favorites</h2>
           <p class="favorites__text">Pick favorites of season</p>
@@ -239,13 +241,13 @@
                 </picture>
               </div>
               <div class="card__buttons">
-                <button class="button card__button">Buy</button>
+                <button class="button card__button own" disabled>Own</button>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="coffee-shop">
+      <section class="coffee-shop" id="coffee-shop">
         <div class="wrapper coffee-shop__wrapper">
           <h2 class="coffee-shop__title">Coffee Shop</h2>
           <div class="coffee-shop__text">
@@ -353,7 +355,7 @@
           </div>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="wrapper contacts__wrapper">
           <h2 class="contacts__title">Our Contacts</h2>
           <div class="contacts__container">
@@ -377,7 +379,11 @@
                 <div class="data__title">Senior Staff</div>
                 <div>
                   <span>Library Director: </span>
-                  <span class="data__title">Amanda Hirst</span>
+                  <span class="data__title">
+                    <a class="mail" href="mailto: AmandaHirst@gmail.com"
+                      >Amanda Hirst</a
+                    >
+                  </span>
                 </div>
               </div>
             </div>
@@ -394,7 +400,7 @@
           </div>
         </div>
       </section>
-      <section class="library-cards">
+      <section class="library-cards" id="library-card">
         <div class="wrapper library-cards__wrapper">
           <h2 class="library-cards__title">Digital Library Cards</h2>
           <div class="library-cards__forms">
@@ -406,14 +412,18 @@
                   <p>
                     <input
                       type="text"
+                      name="reader"
                       class="reader-name"
-                      placeholder="Reader's name " />
+                      placeholder="Reader's name "
+                      pattern="[A-Za-z0-9\-]+" />
                   </p>
                   <p>
                     <input
                       type="text"
                       class="card-number"
-                      placeholder="Card number" />
+                      placeholder="Card number"
+                      pattern="[0-9\-]+"
+                      name="card" />
                   </p>
                 </div>
                 <div class="form__button">
@@ -441,13 +451,18 @@
         <div class="footer__top">
           <div class="footer__contacts">
             <div class="address">
-              <span>286 Cadman Plaza, New York, </span>
-              <span>NY 11238, United States</span>
+              <a
+                class="address__link"
+                href="https://www.google.com/maps/d/viewer?mid=12gBBZE4m6o6-USV9wog4_ODKUR8&hl=en_US&ll=-41.30525899999999%2C174.765342&z=17"
+                target="_blank">
+                <span>286 Cadman Plaza, New York, </span>
+                <span>NY 11238, United States</span>
+              </a>
             </div>
             <div class="social-networks">
-              <a href="#"><span class="twitter"></span></a>
-              <a href="#"><span class="inst"></span></a>
-              <a href="#"><span class="facebook"></span></a>
+              <a href="https://twitter.com/" target="_blank"><span class="twitter"></span></a>
+              <a href="https://www.instagram.com/" target="_blank"><span class="inst"></span></a>
+              <a href="https://www.facebook.com/" target="_blank"><span class="facebook"></span></a>
             </div>
           </div>
           <div class="footer__times">

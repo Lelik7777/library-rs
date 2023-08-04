@@ -23,6 +23,12 @@
   width: 24px;
   background-image: url("../assets/icons/twitter.svg");
   background-repeat: no-repeat;
+  @extend %transition;
+
+  &:hover,
+  &:focus {
+    background-image: url("../assets/icons/twitter copy.svg");
+  }
 }
 
 .inst {
@@ -31,6 +37,12 @@
   width: 24px;
   background-image: url("../assets/icons/u_instagram.svg");
   background-repeat: no-repeat;
+  @extend %transition;
+
+  &:hover,
+  &:focus {
+    background-image: url("../assets/icons/u_instagram copy.svg");
+  }
 }
 
 .facebook {
@@ -39,4 +51,10 @@
   width: 24px;
   background-image: url("../assets/icons/facebook.svg");
   background-repeat: no-repeat;
+  @extend %transition;
+
+  &:hover,
+  &:focus {
+    background-image: url("../assets/icons/facebook copy.svg");
+  }
 }
