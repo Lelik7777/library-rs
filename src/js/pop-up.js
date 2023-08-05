@@ -31,12 +31,15 @@ const addOverlayClickHandler = () => {
 //click on navigation items
 const addNavItemsClickHandler = () => {
   _nav.addEventListener(CONSTANTS.CLICK, function (e) {
-    if (e.target.classList.contains("nav__link")) {
-      _overlay.classList.toggle(active);
-      _hamburger.classList.toggle(active);
-      _body.classList.toggle(lock);
-      _nav.classList.toggle(active);
+    if(window.innerWidth<769){
+      if (e.target.classList.contains("nav__link")) {
+        _overlay.classList.toggle(active);
+        _hamburger.classList.toggle(active);
+        _body.classList.toggle(lock);
+        _nav.classList.toggle(active);
+      }
     }
+
   });
 };
 
