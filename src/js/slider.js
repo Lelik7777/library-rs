@@ -7,7 +7,10 @@ const _btn_four = UTILS.getElementFromDom(".btn_four");
 const _btn_five = UTILS.getElementFromDom(".btn_five");
 const _sliderBtns = UTILS.getElementsFromDom(".slider__buttons .button__container");
 const _sliderContainer = UTILS.getElementFromDom(".slider__container");
+const _sliderBtnLeft = UTILS.getElementFromDom(".slider__button_left");
+const _sliderBtnRight = UTILS.getElementFromDom(".slider__button_right");
 
+let count = 1;
 const buttons = {
   btn_one: _btn_one,
   btn_two: _btn_two,
@@ -15,7 +18,9 @@ const buttons = {
   btn_four: _btn_four,
   btn_five: _btn_five,
 };
+const arrNums = ["zero", "one", "two_2", "three_3", "four", "five"];
 const active = "active";
+const disabled = "disabled";
 
 const addSliderBtnsHandler = () => {
   _sliderBtns.forEach((btn) => {
@@ -39,23 +44,79 @@ const addSliderBtnsHandler = () => {
           classNameButton = "three_3";
         }
       }
+
       if (closestElement.querySelector(".button_round").classList.contains(active)) return;
 
       changeClassesSliderBtns(_sliderBtns, buttons[numberBtn]);
       changeClassesForSliderContainer(_sliderContainer, classNameButton);
       addDisabledButtons(_sliderBtns);
-
+      addDisabledArrows();
       listenEndTransition();
     });
   });
 };
+//slider arrow  left
+const addClickArrowLeftHandler = () => {
+  if (count === 1) {
+    _sliderBtnLeft.classList.add(disabled);
+  }
 
+  _sliderBtnLeft.addEventListener("click", function (e) {
+    count--;
+    _sliderBtnRight.classList.remove(disabled);
+    if (count === 1) {
+      _sliderBtnLeft.classList.add(disabled);
+    }
+    changeClassesForSliderContainer(_sliderContainer, arrNums[count]);
+    addDisabledArrows();
+    listenEndTransition();
+  });
+};
+//slider arrow left
+const addClickArrowRightHandler = () => {
+  if (count === 5) {
+    _sliderBtnRight.classList.add(disabled);
+  }
+  _sliderBtnRight.addEventListener("click", function (e) {
+    count++;
+    _sliderBtnLeft.classList.remove(disabled);
+    if (count === 5) {
+      _sliderBtnRight.classList.add(disabled);
+    }
+    changeClassesForSliderContainer(_sliderContainer, arrNums[count]);
+    addDisabledArrows();
+    listenEndTransition();
+  });
+};
+
+//transition
 function listenEndTransition() {
   _sliderContainer.addEventListener("transitionend", function () {
     removeDisabledButtons(_sliderBtns);
+    removeDisabledArrows();
+    if (count !== 1) {
+      _sliderBtnLeft.classList.remove(disabled);
+    }
+    if (count !== 5) {
+      _sliderBtnRight.classList.remove(disabled);
+    }
   });
 }
 function changeClassesSliderBtns(arr, el) {
+  const obj = {
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+  };
+  const number = el.classList.value
+    .split(" ")
+    .filter((x) => x.includes("btn"))
+    .join("")
+    .replace(/btn_/, "");
+
+  count = obj[number];
   arr.forEach((el) => {
     el.querySelector(".button_round").classList.remove(active);
   });
@@ -76,4 +137,15 @@ function removeDisabledButtons(btns) {
     btn.classList.remove("disabled");
   });
 }
-export { addSliderBtnsHandler };
+
+function addDisabledArrows() {
+  _sliderBtnLeft.classList.add(disabled);
+  _sliderBtnRight.classList.add(disabled);
+}
+function removeDisabledArrows() {
+  if (count !== 1) {
+    _sliderBtnLeft.classList.remove(disabled);
+  }
+  if (count !== 5) _sliderBtnRight.classList.remove(disabled);
+}
+export { addSliderBtnsHandler, addClickArrowLeftHandler, addClickArrowRightHandler };

@@ -40,6 +40,11 @@
     position: absolute;
     top: 51.5%;
     left: -58px;
+    cursor: pointer;
+  }
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.3;
   }
 }
 
@@ -51,6 +56,12 @@
     position: absolute;
     top: 51.5%;
     right: -58px;
+    cursor: pointer;
+  }
+
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.3;
   }
 }
 
