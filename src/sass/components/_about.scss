@@ -74,6 +74,18 @@
   &.three {
     transform: translateX(-950px);
   }
+  &.two_2 {
+    transform: translateX(-520px);
+  }
+  &.three_3 {
+    transform: translateX(-1040px);
+  }
+  &.four {
+    transform: translateX(-1560px);
+  }
+  &.five {
+    transform: translateX(-2080px);
+  }
 }
 
 .slider__buttons {
@@ -96,5 +108,9 @@
     @include media {
       display: inherit;
     }
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
   }
 }
