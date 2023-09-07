@@ -63,6 +63,7 @@ const addClickArrowLeftHandler = () => {
 
   _sliderBtnLeft.addEventListener("click", function (e) {
     count--;
+    changeClassesSliderBtns(_sliderBtns, findSliderBtn(count));
     _sliderBtnRight.classList.remove(disabled);
     if (count === 1) {
       _sliderBtnLeft.classList.add(disabled);
@@ -72,13 +73,14 @@ const addClickArrowLeftHandler = () => {
     listenEndTransition();
   });
 };
-//slider arrow left
+//slider arrow right
 const addClickArrowRightHandler = () => {
   if (count === 5) {
     _sliderBtnRight.classList.add(disabled);
   }
   _sliderBtnRight.addEventListener("click", function (e) {
     count++;
+    changeClassesSliderBtns(_sliderBtns, findSliderBtn(count));
     _sliderBtnLeft.classList.remove(disabled);
     if (count === 5) {
       _sliderBtnRight.classList.add(disabled);
@@ -103,6 +105,7 @@ function listenEndTransition() {
   });
 }
 function changeClassesSliderBtns(arr, el) {
+  console.log(el);
   const obj = {
     one: 1,
     two: 2,
@@ -147,5 +150,9 @@ function removeDisabledArrows() {
     _sliderBtnLeft.classList.remove(disabled);
   }
   if (count !== 5) _sliderBtnRight.classList.remove(disabled);
+}
+function findSliderBtn(num) {
+  const arr = [_btn_one, _btn_two, _btn_three, _btn_four, _btn_five];
+  return arr[num - 1];
 }
 export { addSliderBtnsHandler, addClickArrowLeftHandler, addClickArrowRightHandler };
