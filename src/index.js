@@ -1,6 +1,12 @@
+import { implementSticky } from "./js/implementStickyFavorites";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/pop-up";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
+import "./js/library_card";
+import { addClickProfileIconHandler } from "./js/profile";
+
+const startSticky = 1700;
+const endSticky = 4000;
 
 window.addEventListener("load", function () {
   addHamburgerClickHandler();
@@ -9,11 +15,12 @@ window.addEventListener("load", function () {
   addSliderBtnsHandler();
   addClickArrowLeftHandler();
   addClickArrowRightHandler();
+  addClickProfileIconHandler();
 
   //sticky favorites
-  if(window.innerWidth<769){
+  if (window.innerWidth < 769) {
     window.onscroll = function () {
-      implementSticky();
+      implementSticky(startSticky, endSticky);
     };
   }
 });
@@ -31,24 +38,9 @@ window.addEventListener("resize", function () {
   _sliderBtns[0].querySelector(".button_round").classList.add("active");
 
   //sticky for favorites
-  if(window.innerWidth<769){
+  if (window.innerWidth < 769) {
     window.onscroll = function () {
-      implementSticky();
+      implementSticky(startSticky, endSticky);
     };
   }
 });
-
-
-
-
-
-function implementSticky() {
-
-  if (window.pageYOffset >1700&&window.pageYOffset<4000) {
-    UTILS.getElementFromDom(".favorites__inputs").classList.add("sticky");
-    console.log("add sticky");
-  }else {
-    UTILS.getElementFromDom('.favorites__inputs').classList.remove("sticky");
-    console.log(window.pageYOffset);
-  }
-}

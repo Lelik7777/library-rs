@@ -34,6 +34,7 @@
 }
 
 .header__profile {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -45,4 +46,8 @@
   @include media(1024px) {
     display: inline-block;
   }
+}
+
+.profile__icon{
+  cursor: pointer;
 }
