@@ -9,4 +9,15 @@ const addClickProfileIconHandler = () => {
   });
 };
 
-export { addClickProfileIconHandler };
+//for closing profile menu
+const addClickBodyHandler = () => {
+  document.body.addEventListener("click", function (e) {
+
+    if (_profile.classList.contains("open") && !e.target.classList.contains("profile__icon")&&!e.target.closest('.profile')) {
+
+      _profile.classList.remove("open");
+    }
+  });
+};
+
+export { addClickProfileIconHandler, addClickBodyHandler };

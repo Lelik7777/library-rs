@@ -13,6 +13,10 @@
 
   @include font(1.5rem, 2rem, $spacing: 0);
 
+  @include media() {
+    right: 85px;
+  }
+
   &.open {
     display: flex;
   }
@@ -26,4 +30,12 @@
     display: block;
     border: 1px solid $color-secondary;
   }
+}
+
+.profile__first,
+.profile__second {
+  cursor: pointer;
+}
+.profile__first{
+  margin: 0 0 10px;
 }

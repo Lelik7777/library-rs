@@ -3,7 +3,7 @@ import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandl
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 import "./js/library_card";
-import { addClickProfileIconHandler } from "./js/profile";
+import { addClickBodyHandler, addClickProfileIconHandler } from "./js/profile";
 
 const startSticky = 1700;
 const endSticky = 4000;
@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
   addClickArrowLeftHandler();
   addClickArrowRightHandler();
   addClickProfileIconHandler();
-
+  addClickBodyHandler();
   //sticky favorites
   if (window.innerWidth < 769) {
     window.onscroll = function () {
