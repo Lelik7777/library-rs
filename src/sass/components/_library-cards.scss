@@ -22,6 +22,7 @@
 .form__title {
   &.find {
     @extend %font-primary;
+
     text-align: center;
     margin: 0 0 30px;
   }
@@ -42,7 +43,7 @@
 .form__inputs {
   background-color: $color-secondary;
   margin: 20px;
-  padding: 20px 20px 25px 20px;
+  padding: 20px 20px 25px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -55,8 +56,10 @@
   width: 520px;
   border: #bb945f;
   color: $color-input;
+
   @extend %font-secondary;
   @include font(3rem, 5rem, $spacing: 0.06rem);
+
   padding: 8px 20px;
 }
 
@@ -65,6 +68,7 @@
 
   & .button {
     @include font(2rem, normal, 700, $spacing: 0.1rem);
+
     padding: 10px 40px;
     margin: 0 0 30px;
   }
@@ -72,7 +76,9 @@
 
 .form_right {
   flex-basis: 456px;
+
   @include flex(30px);
+
   text-align: right;
 
   @include media {
@@ -93,6 +99,7 @@
 
 .form__buttons {
   @include flex(20px, row);
+
   justify-content: flex-end;
   padding-top: 5px;
 

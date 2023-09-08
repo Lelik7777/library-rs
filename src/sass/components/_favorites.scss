@@ -17,7 +17,7 @@
 .favorites__wrapper {
   padding: 0 12px 0 67px;
 
-  @include media() {
+  @include media {
     padding: 0 48px 0 20px;
   }
 }
@@ -25,6 +25,7 @@
 .favorites__title {
   display: none;
   text-align: center;
+
   @include media {
     display: block;
     margin: 0 0 60px 30px;
@@ -33,6 +34,7 @@
 
 .favorites__text {
   @include font(2rem, normal, 700, $spacing: 0);
+
   margin: 0 0 38px;
 }
 
@@ -58,11 +60,13 @@
 .favorites__label {
   @include font(2rem, normal, 700, $spacing: 0);
   @extend %hover;
+
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 5px;
 }
+
 .winter {
   padding-left: 0;
 }
@@ -89,12 +93,13 @@
   max-width: 550px;
   padding: 15px 0 15px 20px;
   flex-basis: 50%;
-
   height: 558px;
+
   @include media {
     flex-basis: 100%;
   }
 }
+
 // .card__container{
 //   position: relative;
 // }
@@ -115,6 +120,7 @@
   max-width: 355px;
   text-transform: capitalize;
   letter-spacing: 0.2rem;
+
   // margin: 0 0 15px;
 }
 
@@ -141,6 +147,7 @@
     color: $color-secondary;
   }
 }
+
 .sticky {
   position: fixed;
   top: 0;

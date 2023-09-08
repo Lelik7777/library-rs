@@ -1,6 +1,7 @@
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
+
 /**
  * Includes legacy browser support IE6/7
  *
@@ -22,8 +23,9 @@
 
  html {
    font-family: sans-serif; /* 1 */
-   -ms-text-size-adjust: 100%; /* 2 */
-   -webkit-text-size-adjust: 100%; /* 2 */
+   text-size-adjust: 100%; /* 2 */
+   text-size-adjust: 100%; /* 2 */
+
    @if $legacy_browser_support {
      *font-size: 100%; /* 3 */
    }
@@ -74,6 +76,7 @@
  video {
    display: inline-block; /* 1 */
    vertical-align: baseline; /* 2 */
+
    @if $legacy_browser_support {
      *display: inline;
      *zoom: 1;
@@ -203,7 +206,6 @@
  }
 
  @if $legacy_browser_support {
-
    /**
     * Addresses margins set differently in IE 6/7.
     */
@@ -225,8 +227,8 @@
     * Addresses `quotes` property not supported in Safari 4.
     */
 
-   q:before,
-   q:after {
+   q::before,
+   q::after {
      content: '';
      content: none;
    }
@@ -261,7 +263,6 @@
  }
 
  @if $legacy_browser_support {
-
    /* ==========================================================================
       Lists
       ========================================================================== */
@@ -313,8 +314,9 @@
 
  img {
    border: 0;
+
    @if $legacy_browser_support {
-     *-ms-interpolation-mode: bicubic; /* 2 */
+     *interpolation-mode: bicubic; /* 2 */
    }
  }
 
@@ -364,9 +366,11 @@
  pre,
  samp {
    font-family: monospace, monospace;
+
    @if $legacy_browser_support {
      _font-family: 'courier new', monospace;
    }
+
    font-size: 1em;
  }
 
@@ -394,6 +398,7 @@
    color: inherit; /* 1 */
    font: inherit; /* 2 */
    margin: 0; /* 3 */
+
    @if $legacy_browser_support {
      vertical-align: baseline; /* 3 */
      *vertical-align: middle; /* 3 */
@@ -434,8 +439,9 @@
  html input[type="button"], /* 1 */
  input[type="reset"],
  input[type="submit"] {
-   -webkit-appearance: button; /* 2 */
+   appearance: button; /* 2 */
    cursor: pointer; /* 3 */
+
    @if $legacy_browser_support {
      *overflow: visible;  /* 4 */
    }
@@ -479,6 +485,7 @@
  input[type="radio"] {
    box-sizing: border-box; /* 1 */
    padding: 0; /* 2 */
+
    @if $legacy_browser_support {
      *height: 13px; /* 3 */
      *width: 13px; /* 3 */
@@ -502,7 +509,7 @@
   */
 
  input[type="search"] {
-   -webkit-appearance: textfield; /* 1 */
+   appearance: textfield; /* 1 */
    box-sizing: content-box; /* 2 */
  }
 
@@ -514,7 +521,7 @@
 
  input[type="search"]::-webkit-search-cancel-button,
  input[type="search"]::-webkit-search-decoration {
-   -webkit-appearance: none;
+   appearance: none;
  }
 
  /**
@@ -537,6 +544,7 @@
  legend {
    border: 0; /* 1 */
    padding: 0; /* 2 */
+
    @if $legacy_browser_support {
      white-space: normal; /* 3 */
      *margin-left: -7px; /* 4 */

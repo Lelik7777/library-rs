@@ -9,6 +9,7 @@
 
 .coffee-shop__text {
   @include font(2rem);
+
   text-align: center;
   margin: 0 0 40px;
 }
@@ -43,6 +44,7 @@
   &::after {
     display: none;
   }
+
   &.second {
     text-align: right;
   }
@@ -55,6 +57,7 @@
 
 .price__items {
   @include flex(40px);
+
   // display: flex;
   // flex-direction: column;
   // gap: 40px;
@@ -62,6 +65,7 @@
 
 .price__item {
   @include font(2rem);
+
   text-transform: capitalize;
   display: flex;
   align-items: center;

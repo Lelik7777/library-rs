@@ -25,6 +25,7 @@
 
 .data__title {
   font-weight: 700;
+
   @extend %transition;
  
   &:hover{
@@ -48,6 +49,7 @@
   }
 
 }
+
 .contacts__map {
   display: flex;
 

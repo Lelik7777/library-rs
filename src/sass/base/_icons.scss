@@ -9,10 +9,11 @@
 .icon__arrow_left {
   width: 14px;
   height: 23px;
-  background-image: url(../assets/icons/Arrow\ 2.svg);
+  background-image: url("../assets/icons/Arrow\ 2.svg");
 }
+
 .icon__arrow_right {
-  background-image: url(../assets/icons/Arrow\ 1.svg);
+  background-image: url("../assets/icons/Arrow\ 1.svg");
   width: 14px;
   height: 23px;
 }
@@ -23,6 +24,7 @@
   width: 24px;
   background-image: url("../assets/icons/twitter.svg");
   background-repeat: no-repeat;
+
   @extend %transition;
 
   &:hover,
@@ -37,6 +39,7 @@
   width: 24px;
   background-image: url("../assets/icons/u_instagram.svg");
   background-repeat: no-repeat;
+
   @extend %transition;
 
   &:hover,
@@ -51,6 +54,7 @@
   width: 24px;
   background-image: url("../assets/icons/facebook.svg");
   background-repeat: no-repeat;
+
   @extend %transition;
 
   &:hover,

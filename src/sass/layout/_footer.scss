@@ -16,20 +16,23 @@
 .footer__top {
   @include font($height: 2rem, $spacing: normal);
   @include flex($direction: row);
+
   justify-content: space-between;
 }
 
 .footer__contacts {
   @include flex(18px);
+
   margin: 0 0 30px;
 
   & .address .address__link {
-    @include flex();
+    @include flex;
     @extend %transition;
   }
 
   & .social-networks {
     @include flex($direction: row);
+
     gap: 15px;
 
   }
@@ -39,7 +42,8 @@
   @include flex(10px);
 
   > * {
-    @include flex();
+    @include flex;
+
     align-items: flex-end;
   }
 }
@@ -50,6 +54,8 @@
 
 .footer__bottom {
   @include flex($direction: row);
+
   justify-content: space-between;
+
   @include font(2rem, 2rem);
 }

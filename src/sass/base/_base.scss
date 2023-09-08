@@ -4,9 +4,11 @@ html {
 }
 
 .body {
-  @include font();
+  @include font;
   @extend %font-primary;
+
   color: $color-dark;
+
   @extend %custom-scroll;
 
   &._lock {
@@ -22,6 +24,7 @@ h1 {
 h2 {
   @extend %font-secondary;
   @include font(4rem, 4rem, $spacing: 0.2rem);
+
   color: $color-primary;
   position: relative;
 
@@ -44,12 +47,14 @@ h2 {
 h3 {
   @extend %font-secondary;
   @include font(3rem, 4rem, $spacing: 0.06rem);
+
   color: $color-dark;
 }
 
 h4 {
   @extend %font-secondary;
   @include font(2rem, 4rem, $spacing: 0.2rem);
+
   color: $color-dark;
 
   &::after {
@@ -66,6 +71,7 @@ h4 {
 
 h5 {
   @include font(1.5rem, 4rem, $spacing: 0.2rem, $weight: 700);
+
   color: $color-dark;
   text-transform: uppercase;
 }

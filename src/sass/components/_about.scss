@@ -1,5 +1,6 @@
 .about {
   padding: 20px 0 40px;
+
   @include media {
     padding: 20px 0 45px;
   }
@@ -12,7 +13,8 @@
 }
 
 .about__text {
-  @include font(2rem, $spacing: 0rem);
+  @include font(2rem, $spacing: 0);
+
   text-align: center;
   margin: 0 0 20px;
 }
@@ -21,7 +23,7 @@
 .about__slider {
   overflow: hidden;
 
-  @include media() {
+  @include media {
     width: 568px;
     margin: auto;
     padding: 0 58px;
@@ -42,6 +44,7 @@
     left: -58px;
     cursor: pointer;
   }
+
   &.disabled{
     pointer-events: none;
     opacity: 0.3;
@@ -76,24 +79,31 @@
     gap: 70px;
     margin: 0 0 20px;
   }
+
   &.one {
     transform: translateX(0);
   }
+
   &.two {
     transform: translateX(-475px);
   }
+
   &.three {
     transform: translateX(-950px);
   }
+
   &.two_2 {
     transform: translateX(-520px);
   }
+
   &.three_3 {
     transform: translateX(-1040px);
   }
+
   &.four {
     transform: translateX(-1560px);
   }
+
   &.five {
     transform: translateX(-2080px);
   }
@@ -120,6 +130,7 @@
       display: inherit;
     }
   }
+
   &.disabled {
     pointer-events: none;
     opacity: 0.3;
