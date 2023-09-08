@@ -13,7 +13,7 @@
 
   @include font(1.5rem, 2rem, $spacing: 0);
 
-  @include media() {
+  @include media {
     right: 85px;
   }
 
@@ -36,6 +36,7 @@
 .profile__second {
   cursor: pointer;
 }
+
 .profile__first{
   margin: 0 0 10px;
 }
