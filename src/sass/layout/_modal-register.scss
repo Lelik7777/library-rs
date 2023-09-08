@@ -1,10 +1,15 @@
 .modal__register {
   position: fixed;
   width: 250px;
-  height: 382px;
+  height: 390px;
   z-index: 11;
   background-color: $color-light;
   padding: 20px 25px;
+  display: none;
+
+  &.open {
+    display: block;
+  }
 }
 
 .register__title {
@@ -29,6 +34,10 @@
   &:last-child {
     margin: 0;
   }
+  & .input {
+    width: 100%;
+    border: 1px solid $color-secondary;
+  }
 }
 
 .register__label {
@@ -42,6 +51,20 @@
   margin: 0 0 10px;
 }
 
-.register__text{
-  @include font(1rem, normal,700, $spacing: 0);
+.register__text {
+  @include font(1rem, normal, 700, $spacing: 0);
+}
+.register__link {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.btn_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-image: url("../assets/icons/close_btn.svg");
+  cursor: pointer;
 }

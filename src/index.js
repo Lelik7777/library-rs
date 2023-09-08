@@ -1,9 +1,11 @@
 import { implementSticky } from "./js/implementStickyFavorites";
-import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/pop-up";
+import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
-import "./js/library_card";
-import { addClickBodyHandler, addClickProfileIconHandler } from "./js/profile";
+import "./js/libraryCards";
+import { addClickBodyHandler, addClickProfileIconHandler, addClickRegisterHandler } from "./js/profile";
+import { addClickBtnCloseHandler, addClickOverlayModalHandler } from "./js/register";
+import { addClickFormButtonHandler, addClickSignBtnHandler } from "./js/libraryCards";
 
 const startSticky = 1700;
 const endSticky = 4000;
@@ -17,6 +19,11 @@ window.addEventListener("load", function () {
   addClickArrowRightHandler();
   addClickProfileIconHandler();
   addClickBodyHandler();
+  addClickRegisterHandler();
+  addClickBtnCloseHandler();
+  addClickOverlayModalHandler();
+  addClickFormButtonHandler();
+  addClickSignBtnHandler();
   //sticky favorites
   if (window.innerWidth < 769) {
     window.onscroll = function () {
@@ -44,4 +51,3 @@ window.addEventListener("resize", function () {
     };
   }
 });
-
