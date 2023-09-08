@@ -34,6 +34,7 @@
   &:last-child {
     margin: 0;
   }
+
   & .input {
     width: 100%;
     border: 1px solid $color-secondary;
@@ -54,10 +55,12 @@
 .register__text {
   @include font(1rem, normal, 700, $spacing: 0);
 }
+
 .register__link {
   margin-left: 10px;
   text-decoration: underline;
 }
+
 .btn_close {
   position: absolute;
   top: 15px;

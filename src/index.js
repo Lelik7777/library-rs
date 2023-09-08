@@ -1,11 +1,15 @@
 import { implementSticky } from "./js/implementStickyFavorites";
+import "./js/libraryCards";
+import { addClickFormButtonHandler, addClickSignBtnHandler } from "./js/libraryCards";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
+import { addClickBodyHandler, addClickProfileIconHandler, addClickRegisterHandler } from "./js/profile";
+import {
+  addClickBtnCloseHandler,
+  addClickOverlayModalHandler,
+  getDataFromForm
+} from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
-import "./js/libraryCards";
-import { addClickBodyHandler, addClickProfileIconHandler, addClickRegisterHandler } from "./js/profile";
-import { addClickBtnCloseHandler, addClickOverlayModalHandler } from "./js/register";
-import { addClickFormButtonHandler, addClickSignBtnHandler } from "./js/libraryCards";
 
 const startSticky = 1700;
 const endSticky = 4000;
@@ -24,6 +28,7 @@ window.addEventListener("load", function () {
   addClickOverlayModalHandler();
   addClickFormButtonHandler();
   addClickSignBtnHandler();
+  getDataFromForm();
   //sticky favorites
   if (window.innerWidth < 769) {
     window.onscroll = function () {
