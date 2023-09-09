@@ -1,6 +1,7 @@
 const CONSTANTS = {
   CLICK: "click",
-  OPEN:'open'
+  OPEN:'open',
+  CLOSE:'close',
 };
 
 export { CONSTANTS };

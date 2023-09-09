@@ -28,7 +28,8 @@
             </ul>
           </nav>
           <div class="header__profile">
-            <span class="profile__icon"></span>
+            <span class="profile__icon open"></span>
+            <span class="profile__name"></span>
             <div class="profile">
               <span class="profile__title">Profile</span>
               <span class="profile__first">Log in</span>
@@ -422,7 +423,7 @@
     <div class="overlay__modal">
       <div class="modal__register">
         <div class="register__title">REGISTER</div>
-        <form class="register__form" >
+        <form action="#" class="register__form" method="get">
           <div class="register__inputs">
             <p class="first-name input__container">
               <label class="register__label" for="first-name">First name </label>
@@ -441,7 +442,7 @@
               <input id="password" type="password" class="input"  minlength="8" required/>
             </p>
           </div>
-          <button class=" button register__button ">Sign up</button>
+          <input type="button"  class=" button register__button " value="Sign up">
         </form>
         <p class="register__text">Already have an account?<a class="register__link" href="">Login</a></p>
         <span class="btn_close"></span>

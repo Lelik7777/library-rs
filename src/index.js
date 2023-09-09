@@ -1,3 +1,4 @@
+import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
 import { addClickFormButtonHandler, addClickSignBtnHandler } from "./js/libraryCards";
@@ -6,7 +7,8 @@ import { addClickBodyHandler, addClickProfileIconHandler, addClickRegisterHandle
 import {
   addClickBtnCloseHandler,
   addClickOverlayModalHandler,
-  getDataFromForm
+  addClickRegisterSignUpBtnHandler,
+  sendData,
 } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
@@ -15,6 +17,8 @@ const startSticky = 1700;
 const endSticky = 4000;
 
 window.addEventListener("load", function () {
+  const data = checkData();
+  console.log(data);
   addHamburgerClickHandler();
   addOverlayClickHandler();
   addNavItemsClickHandler();
@@ -28,7 +32,13 @@ window.addEventListener("load", function () {
   addClickOverlayModalHandler();
   addClickFormButtonHandler();
   addClickSignBtnHandler();
-  getDataFromForm();
+  sendData(addClickRegisterSignUpBtnHandler);
+  changePersonIcon(data)
+
+  // document.querySelector('.log-in').addEventListener('click',function(){
+  //   changePersonIcon(data,false)
+  // })
+
   //sticky favorites
   if (window.innerWidth < 769) {
     window.onscroll = function () {
@@ -56,3 +66,7 @@ window.addEventListener("resize", function () {
     };
   }
 });
+
+const checkData = () => {
+  return JSON.parse(window.localStorage.getItem("form"));
+};

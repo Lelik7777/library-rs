@@ -51,6 +51,19 @@
   }
 }
 
-.profile__icon{
+.profile__icon {
   cursor: pointer;
+  display: none;
+
+  &.open {
+    display: inline;
+  }
+}
+
+.profile__name {
+  display: none;
+
+  &.open {
+    display: inline;
+  }
 }
