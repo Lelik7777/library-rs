@@ -19,13 +19,21 @@ alert(
   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
 );
 window.addEventListener("load", function () {
+
   let data = null;
   console.log(this.window.localStorage.getItem('form'));
   if (this.localStorage.getItem("form")) {
 
     data = getForm();
-    data=JSON.parse(data);
+    console.log(typeof data);
+    if(data!=='null'){
+      data=JSON.parse(data);
+    }
+
     console.log(data);
+  }
+  else{
+    this.localStorage.setItem('form',null);
   }
   console.log(data);
   addHamburgerClickHandler();
