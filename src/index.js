@@ -17,7 +17,10 @@ const startSticky = 1700;
 const endSticky = 4000;
 alert('Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉')
 window.addEventListener("load", function () {
-  const data = checkData();
+let data=null;
+  if(this.localStorage.getItem('form')){
+     data = checkData();
+  }
   console.log(data);
   addHamburgerClickHandler();
   addOverlayClickHandler();
@@ -68,6 +71,5 @@ window.addEventListener("resize", function () {
 });
 
 const checkData = () => {
-  if(window.localStorage.getItem('form'))
   return  JSON.parse(window.localStorage.getItem("form"));
 };
