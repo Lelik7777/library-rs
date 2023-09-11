@@ -73,7 +73,8 @@ window.addEventListener("resize", function () {
 });
 
 const getForm = () => {
-  let data = window.localStorage.getItem("form");
+  console.log('get form');
+  let data = window.localStorage.getItem("form")||null;
    if(data) data=JSON.parse(data);
    return data;
 };
