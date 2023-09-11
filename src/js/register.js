@@ -29,8 +29,11 @@ const addClickOverlayModalHandler = () => {
 };
 const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
-    saveForm(data);
-    location.reload();
+    if(data){
+      saveForm(data);
+      location.reload();
+    }
+
   });
 };
 const sendData = (callback) => {
