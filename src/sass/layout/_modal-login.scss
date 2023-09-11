@@ -1,7 +1,7 @@
-.modal__register {
+.modal__login {
   position: fixed;
   width: 250px;
-  height: 390px;
+  height: 270px;
   z-index: 11;
   background-color: $color-light;
   padding: 20px 25px;
@@ -12,7 +12,7 @@
   }
 }
 
-.register__title {
+.login__title {
   @extend %font-secondary;
   @include font(2rem, 2rem, $spacing: 0.04rem);
 
@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-.register__form {
+.login__form {
   @include font(1.5rem, 2rem, $spacing: 0.03rem);
 
   display: flex;
@@ -41,23 +41,22 @@
   }
 }
 
-.register__label {
+.login__label {
   display: inline-block;
   margin: 0 0 10px;
 }
 
-.register__button {
+.login__button {
   align-self: flex-start;
   padding: 9px 15px;
   margin: 0 0 10px;
 }
 
-.register__text {
+.login__text {
   @include font(1rem, normal, 700, $spacing: 0);
 }
 
-.register__link {
+.login__link {
   margin-left: 10px;
   text-decoration: underline;
 }
-

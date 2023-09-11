@@ -7,8 +7,9 @@ const _profileName = UTILS.getElementFromDom(".profile__name");
 //flag for login: if log out then flag=false
 const changePersonIcon = (data, flag = true) => {
   if (data && flag) {
-    
-    _profileName.textContent = `${data.firstName.slice(0, 1).toUpperCase()}${data.lastName.slice(0, 1).toUpperCase()}`;
+const {firstName,lastName}=data;
+    _profileName.textContent = `${firstName.slice(0, 1).toUpperCase()}${lastName.slice(0, 1).toUpperCase()}`;
+    _profileName.setAttribute('title',`${firstName} ${lastName}`)
     showName();
   } else {
     console.log(false);

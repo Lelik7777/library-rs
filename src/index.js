@@ -1,12 +1,18 @@
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
-import { addClickFormButtonHandler, addClickSignBtnHandler } from "./js/libraryCards";
+import { addClickFormButtonHandler, addClickSignBtnCardsHandler } from "./js/libraryCards";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
-import { addClickBodyHandler, addClickProfileIconHandler, addClickRegisterHandler } from "./js/profile";
 import {
+  addClickBodyHandler,
+  addClickLogInProfileHandler,
+  addClickProfileIconHandler,
+  addClickRegisterHandler,
   addClickBtnCloseHandler,
   addClickOverlayModalHandler,
+} from "./js/profile";
+import {
+
   addClickRegisterSignUpBtnHandler,
   sendData,
 } from "./js/register";
@@ -15,9 +21,9 @@ import { UTILS } from "./js/utils";
 
 const startSticky = 1700;
 const endSticky = 4000;
-alert(
-  "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
-);
+// alert(
+//   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
+// );
 window.addEventListener("load", function () {
   let obj;
   let data = this.localStorage.getItem("form");
@@ -41,12 +47,14 @@ window.addEventListener("load", function () {
   addClickProfileIconHandler();
   addClickBodyHandler();
   addClickRegisterHandler();
-  addClickBtnCloseHandler();
-  addClickOverlayModalHandler();
+  addClickBtnCloseHandler(),
+  addClickOverlayModalHandler(),
   addClickFormButtonHandler();
-  addClickSignBtnHandler();
+  addClickSignBtnCardsHandler();
   sendData(addClickRegisterSignUpBtnHandler);
   changePersonIcon(obj);
+  //for log in in header
+  addClickLogInProfileHandler();
 
   // document.querySelector('.log-in').addEventListener('click',function(){
   //   changePersonIcon(data,false)
@@ -79,10 +87,3 @@ window.addEventListener("resize", function () {
     };
   }
 });
-
-// const getForm = () => {
-//   console.log('get form');
-//   let data = window.localStorage.getItem("form")||null;
-
-//    return data;
-// };

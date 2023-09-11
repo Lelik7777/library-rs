@@ -1,10 +1,6 @@
 import { CONSTANTS } from "./config";
 import { UTILS } from "./utils";
 
-
-const _btnClose = UTILS.getElementFromDom(".modal__register .btn_close");
-const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
-const _modalRegister = UTILS.getElementFromDom(".modal__register");
 const _registerBtn = UTILS.getElementFromDom(".register__button");
 const _firstName = UTILS.getElementFromDom("#first-name");
 const _lastName = UTILS.getElementFromDom("#last-name");
@@ -12,28 +8,13 @@ const _email = UTILS.getElementFromDom("#email");
 const _password = UTILS.getElementFromDom("#password");
 const _inputs = UTILS.getElementsFromDom(".register__form .input");
 
-const addClickBtnCloseHandler = () => {
-  _btnClose.addEventListener(CONSTANTS.CLICK, function (e) {
-    _overlayModal.classList.remove(CONSTANTS.OPEN);
-    _modalRegister.classList.remove(CONSTANTS.OPEN);
-  });
-};
-
-const addClickOverlayModalHandler = () => {
-  _overlayModal.addEventListener(CONSTANTS.CLICK, function (e) {
-    if (!e.target.closest(".modal__register")) {
-      this.classList.remove(CONSTANTS.OPEN);
-      _modalRegister.classList.remove(CONSTANTS.OPEN);
-    }
-  });
-};
 const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
-    if(data){
+    if (Object.values(data).filter(x=>x!=='').length>4) {
       saveForm(data);
       location.reload();
     }
-
+  
   });
 };
 const sendData = (callback) => {
@@ -60,9 +41,9 @@ function saveForm(data) {
   window.localStorage.setItem("form", json);
 }
 
-
-
 function getHexNum() {
-  return Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")
+  return Math.floor(Math.random() * 0xffffff)
+    .toString(16)
+    .padEnd(6, "0");
 }
-export { addClickBtnCloseHandler, addClickOverlayModalHandler, sendData, addClickRegisterSignUpBtnHandler };
+export { sendData, addClickRegisterSignUpBtnHandler };

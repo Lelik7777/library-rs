@@ -12,11 +12,19 @@ const addClickFormButtonHandler = () => {
   });
 };
 
-const addClickSignBtnHandler = () => {
+const addClickSignBtnCardsHandler = () => {
   _btnSignUp.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
     _overlayModal.classList.add(CONSTANTS.OPEN);
     _modalRegister.classList.add(CONSTANTS.OPEN);
   });
 };
-export { addClickFormButtonHandler, addClickSignBtnHandler };
+
+const addClickLogInBtnCardsHandler = () => {
+  _btnSignUp.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
+    _overlayModal.classList.add(CONSTANTS.OPEN);
+    _modalRegister.classList.add(CONSTANTS.OPEN);
+  });
+};
+export { addClickFormButtonHandler, addClickSignBtnCardsHandler };

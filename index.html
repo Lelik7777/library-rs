@@ -29,7 +29,7 @@
           </nav>
           <div class="header__profile">
             <span class="profile__icon open"></span>
-            <span class="profile__name"></span>
+            <span title="" class="profile__name"></span>
             <div class="profile">
               <span class="profile__title">Profile</span>
               <span class="profile__first">Log in</span>
@@ -423,7 +423,7 @@
     <div class="overlay__modal">
       <div class="modal__register">
         <div class="register__title">REGISTER</div>
-        <form action="#" class="register__form" method="get">
+        <form  class="register__form" >
           <div class="register__inputs">
             <p class="first-name input__container">
               <label class="register__label" for="first-name">First name </label>
@@ -442,9 +442,28 @@
               <input id="password" type="password" class="input"  minlength="8" required/>
             </p>
           </div>
-          <input type="button"  class=" button register__button " value="Sign up">
+          <button class="button register__button">Sign up</button>
         </form>
         <p class="register__text">Already have an account?<a class="register__link" href="">Login</a></p>
+        <span class="btn_close"></span>
+      </div>
+      <div class="modal__login">
+        <div class="login__title">LOGIN</div>
+        <form action="#" class="login__form" method="get">
+          <div class="login__inputs">
+
+            <p class="mail input__container">
+              <label class="login__label" for="email_login">E-mail or readers card </label>
+              <input id="email_login" type="email" class="input" required/>
+            </p>
+            <p class="password input__container">
+              <label class="login__label" for="password_login">Password </label>
+              <input id="password_login" type="password" class="input"  minlength="8" required/>
+            </p>
+          </div>
+          <button class="button register__button">Sign up</button>
+        </form>
+        <p class="login__text">Don’t have an account?<a class="login__link" href="">Register</a></p>
         <span class="btn_close"></span>
       </div>
     </div>
