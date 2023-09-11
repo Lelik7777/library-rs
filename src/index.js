@@ -21,9 +21,9 @@ alert(
 window.addEventListener("load", function () {
   let data = null;
 
-  if (this.localStorage.getItem("form") !== "null" || this.localStorage.getItem("form")) {
+  if (this.localStorage.getItem("form") !== "null" ) {
     const dataFromStorage = this.localStorage.getItem("form");
-    if (dataFromStorage === "undefined" || !dataFromStorage) return;
+    if (dataFromStorage === "undefined" ) return;
     data = JSON.parse(dataFromStorage);
   }
 
