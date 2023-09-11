@@ -15,27 +15,17 @@ import { UTILS } from "./js/utils";
 
 const startSticky = 1700;
 const endSticky = 4000;
-alert(
-  "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
-);
+// alert(
+//   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
+// );
 window.addEventListener("load", function () {
-
   let data = null;
-  console.log(this.window.localStorage.getItem('form'));
-  if (this.localStorage.getItem("form")) {
 
-    data = getForm();
-    console.log(typeof data);
-    if(data!=='null'){
-      data=JSON.parse(data);
-    }
+  if (this.localStorage.getItem("form")!=='null') {
+    console.log('it is form');
+    data = JSON.parse(this.localStorage.getItem('form'));
+  }
 
-    console.log(data);
-  }
-  else{
-    this.localStorage.setItem('form',null);
-  }
-  console.log(data);
   addHamburgerClickHandler();
   addOverlayClickHandler();
   addNavItemsClickHandler();
@@ -84,9 +74,9 @@ window.addEventListener("resize", function () {
   }
 });
 
-const getForm = () => {
-  console.log('get form');
-  let data = window.localStorage.getItem("form")||null;
+// const getForm = () => {
+//   console.log('get form');
+//   let data = window.localStorage.getItem("form")||null;
 
-   return data;
-};
+//    return data;
+// };
