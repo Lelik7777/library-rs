@@ -68,5 +68,6 @@ window.addEventListener("resize", function () {
 });
 
 const checkData = () => {
-  return JSON.parse(window.localStorage.getItem("form"));
+  if(window.localStorage.getItem('form'))
+  return  JSON.parse(window.localStorage.getItem("form"));
 };
