@@ -21,9 +21,10 @@ alert(
 window.addEventListener("load", function () {
   let data = null;
 
-  if (this.localStorage.getItem("form")!=='null') {
-    console.log('it is form');
-    data = JSON.parse(this.localStorage.getItem('form'));
+  if (this.localStorage.getItem("form") !== "null" || this.localStorage.getItem("form")) {
+    const dataFromStorage = this.localStorage.getItem("form");
+    if (dataFromStorage === "undefined" || !dataFromStorage) return;
+    data = JSON.parse(dataFromStorage);
   }
 
   addHamburgerClickHandler();
