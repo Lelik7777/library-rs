@@ -20,8 +20,12 @@ alert(
 );
 window.addEventListener("load", function () {
   let data = null;
+  console.log(this.window.localStorage.getItem('form'));
   if (this.localStorage.getItem("form")) {
+
     data = getForm();
+    data=JSON.parse(data);
+    console.log(data);
   }
   console.log(data);
   addHamburgerClickHandler();
@@ -75,6 +79,6 @@ window.addEventListener("resize", function () {
 const getForm = () => {
   console.log('get form');
   let data = window.localStorage.getItem("form")||null;
-   if(data) data=JSON.parse(data);
+  // if(data) data=JSON.parse(data);
    return data;
 };
