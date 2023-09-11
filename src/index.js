@@ -19,12 +19,17 @@ alert(
   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
 );
 window.addEventListener("load", function () {
-  let data = null;
+  let obj;
+  let data = this.localStorage.getItem("form");
+  if (!data || data !== "undefined") {
+    obj = JSON.parse(data);
+  } else {
+    obj = null;
+  }
 
-  if (this.localStorage.getItem("form") !== "null" ) {
+  if (this.localStorage.getItem("form") !== "null") {
     const dataFromStorage = this.localStorage.getItem("form");
-    if (dataFromStorage === "undefined" ) return;
-    data = JSON.parse(dataFromStorage);
+    if (!dataFromStorage === "undefined") data = JSON.parse(dataFromStorage);
   }
 
   addHamburgerClickHandler();
@@ -41,7 +46,7 @@ window.addEventListener("load", function () {
   addClickFormButtonHandler();
   addClickSignBtnHandler();
   sendData(addClickRegisterSignUpBtnHandler);
-  changePersonIcon(data);
+  changePersonIcon(obj);
 
   // document.querySelector('.log-in').addEventListener('click',function(){
   //   changePersonIcon(data,false)
