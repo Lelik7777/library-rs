@@ -60,10 +60,7 @@ function saveForm(data) {
   window.localStorage.setItem("form", json);
 }
 
-function getForm() {
-  const form = window.localStorage.getItem("form");
-  if (form) return JSON.parse(form);
-}
+
 
 function getHexNum() {
   return Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")
