@@ -6,6 +6,10 @@ import {
   addClickFormButtonHandler,
   addClickSignBtnCardsHandler,
   addClickLogInBtnCardsHandler,
+  closeBtnOpenIcons,
+  changeInputsPlaceHolder,
+  closeButtons,
+  changeTextReaderCard,
 } from "./js/libraryCards";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
@@ -24,7 +28,7 @@ import { UTILS } from "./js/utils";
 
 const startSticky = 1700;
 const endSticky = 4000;
-let login=false;
+let login = false;
 // alert(
 //   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
 // );
@@ -34,10 +38,12 @@ window.addEventListener("load", function () {
   console.log(data);
   if (data || data !== "undefined") {
     obj = JSON.parse(data);
-    
-    console.log('hello world');
   } else {
     obj = null;
+  }
+
+  if (obj) {
+    login = true;
   }
 
   if (this.localStorage.getItem("form") !== "null") {
@@ -61,6 +67,10 @@ window.addEventListener("load", function () {
   addClickFormButtonHandler();
   addClickSignBtnCardsHandler();
   addClickLogInBtnCardsHandler();
+  closeBtnOpenIcons(login);
+  changeInputsPlaceHolder(login, obj);
+  closeButtons(login);
+  changeTextReaderCard(login);
   sendData(addClickRegisterSignUpBtnHandler);
   changePersonIcon(obj);
   //for log in in header
@@ -78,7 +88,7 @@ window.addEventListener("load", function () {
       implementSticky(startSticky, endSticky);
     };
   }
-  console.log('login:',login);
+  console.log("login:", login);
 });
 
 window.addEventListener("resize", function () {

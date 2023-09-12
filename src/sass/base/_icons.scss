@@ -62,3 +62,18 @@
     background-image: url("../assets/icons/facebook copy.svg");
   }
 }
+
+.visit,.bonus,.book{
+  width: 20px;
+  height: 21px;
+  display: inline-block;
+}
+.visit{
+  background-image: url('../assets/icons/Union_visit.svg');
+}
+.bonus{
+  background-image: url('../assets/icons/Star\ 1.svg');
+}
+.book{
+  background-image: url('../assets/icons/book.svg');
+}
