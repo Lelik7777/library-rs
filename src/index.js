@@ -1,7 +1,12 @@
+import { addClickCardBtnHandler,addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
-import { addClickFormButtonHandler, addClickSignBtnCardsHandler } from "./js/libraryCards";
+import {
+  addClickFormButtonHandler,
+  addClickSignBtnCardsHandler,
+  addClickLogInBtnCardsHandler,
+} from "./js/libraryCards";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
   addClickBodyHandler,
@@ -11,11 +16,7 @@ import {
   addClickBtnCloseHandler,
   addClickOverlayModalHandler,
 } from "./js/profile";
-import {
-
-  addClickRegisterSignUpBtnHandler,
-  sendData,
-} from "./js/register";
+import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 
@@ -47,14 +48,15 @@ window.addEventListener("load", function () {
   addClickProfileIconHandler();
   addClickBodyHandler();
   addClickRegisterHandler();
-  addClickBtnCloseHandler(),
-  addClickOverlayModalHandler(),
-  addClickFormButtonHandler();
+  addClickBtnCloseHandler(), addClickOverlayModalHandler(), addClickFormButtonHandler();
   addClickSignBtnCardsHandler();
+  addClickLogInBtnCardsHandler();
   sendData(addClickRegisterSignUpBtnHandler);
   changePersonIcon(obj);
   //for log in in header
   addClickLogInProfileHandler();
+  addClickCardBtnHandler();
+  addClickInputRadioHandler();
 
   // document.querySelector('.log-in').addEventListener('click',function(){
   //   changePersonIcon(data,false)
