@@ -24,14 +24,18 @@ import { UTILS } from "./js/utils";
 
 const startSticky = 1700;
 const endSticky = 4000;
+let login=false;
 // alert(
 //   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
 // );
 window.addEventListener("load", function () {
   let obj;
   let data = this.localStorage.getItem("form");
-  if (!data || data !== "undefined") {
+  console.log(data);
+  if (data || data !== "undefined") {
     obj = JSON.parse(data);
+    
+    console.log('hello world');
   } else {
     obj = null;
   }
@@ -74,6 +78,7 @@ window.addEventListener("load", function () {
       implementSticky(startSticky, endSticky);
     };
   }
+  console.log('login:',login);
 });
 
 window.addEventListener("resize", function () {

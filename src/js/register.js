@@ -16,6 +16,7 @@ const addClickRegisterSignUpBtnHandler = (data) => {
     if (Object.values(data).filter((x) => x !== "").length > 4) {
       saveForm(data);
       location.reload();
+    
     }
   });
 };
