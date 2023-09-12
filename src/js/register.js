@@ -8,15 +8,15 @@ const _email = UTILS.getElementFromDom("#email");
 const _password = UTILS.getElementFromDom("#password");
 const _inputs = UTILS.getElementsFromDom(".register__form .input");
 
+
+
 //todo close register modal window
 const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
-    if (Object.values(data).filter(x=>x!=='').length>4) {
+    if (Object.values(data).filter((x) => x !== "").length > 4) {
       saveForm(data);
-
       location.reload();
     }
-
   });
 };
 const sendData = (callback) => {

@@ -1,4 +1,4 @@
-import { addClickCardBtnHandler,addClickInputRadioHandler } from "./js/favorites";
+import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
@@ -15,6 +15,8 @@ import {
   addClickRegisterHandler,
   addClickBtnCloseHandler,
   addClickOverlayModalHandler,
+  addClickLoginBtnRegisterHandler,
+  addClickRegisterBtnLoginHandler,
 } from "./js/profile";
 import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
@@ -48,7 +50,11 @@ window.addEventListener("load", function () {
   addClickProfileIconHandler();
   addClickBodyHandler();
   addClickRegisterHandler();
-  addClickBtnCloseHandler(), addClickOverlayModalHandler(), addClickFormButtonHandler();
+  addClickLoginBtnRegisterHandler();
+  addClickRegisterBtnLoginHandler();
+  addClickBtnCloseHandler();
+  addClickOverlayModalHandler();
+  addClickFormButtonHandler();
   addClickSignBtnCardsHandler();
   addClickLogInBtnCardsHandler();
   sendData(addClickRegisterSignUpBtnHandler);

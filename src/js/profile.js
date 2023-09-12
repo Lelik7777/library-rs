@@ -9,6 +9,8 @@ const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
 const _modalRegister = UTILS.getElementFromDom(".modal__register");
 const _profileFist = UTILS.getElementFromDom(".profile__first");
 const _modalLogin = UTILS.getElementFromDom(".modal__login");
+const _linkRegister = UTILS.getElementFromDom(".register__link");
+const _linkLogin = UTILS.getElementFromDom(".login__link");
 
 const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
@@ -48,10 +50,8 @@ const addClickLogInProfileHandler = () => {
 
 //handlers for closing register and log in modal windows
 const addClickBtnCloseHandler = () => {
-
   _btnsClose.forEach((btn) => {
     btn.addEventListener(CONSTANTS.CLICK, function (e) {
-      
       _overlayModal.classList.remove(CONSTANTS.OPEN);
       _modalRegister.classList.remove(CONSTANTS.OPEN);
       _modalLogin.classList.remove(CONSTANTS.OPEN);
@@ -68,6 +68,28 @@ const addClickOverlayModalHandler = () => {
     }
   });
 };
+
+//open  login modal  window in register window
+const addClickLoginBtnRegisterHandler = () => {
+  console.log(_linkRegister);
+  _linkRegister.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
+
+    _modalRegister.classList.remove(CONSTANTS.OPEN);
+    _modalLogin.classList.add(CONSTANTS.OPEN);
+  });
+};
+
+//open register modal window in login window
+const addClickRegisterBtnLoginHandler = () => {
+  console.log(_linkRegister);
+  _linkLogin.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
+
+    _modalRegister.classList.add(CONSTANTS.OPEN);
+    _modalLogin.classList.remove(CONSTANTS.OPEN);
+  });
+};
 export {
   addClickProfileIconHandler,
   addClickBodyHandler,
@@ -75,4 +97,6 @@ export {
   addClickLogInProfileHandler,
   addClickBtnCloseHandler,
   addClickOverlayModalHandler,
+  addClickLoginBtnRegisterHandler,
+  addClickRegisterBtnLoginHandler,
 };
