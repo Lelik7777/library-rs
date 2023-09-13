@@ -8,11 +8,14 @@ const _inputsFavorites = UTILS.getElementsFromDom(".favorites__input");
 const _cardsFavorites = UTILS.getElementsFromDom(".favorites__cards");
 
 //todo when log in true then  open модальное окно BUY A LIBRARY CARD
-const addClickCardBtnHandler = () => {
+const addClickCardBtnHandler = (login) => {
   _cardsBtns.forEach((btn) => {
     btn.addEventListener(CONSTANTS.CLICK, function (e) {
-      _modalLogin.classList.add(CONSTANTS.OPEN);
-      _overlayModal.classList.add(CONSTANTS.OPEN);
+      if (login) {
+      } else {
+        _modalLogin.classList.add(CONSTANTS.OPEN);
+        _overlayModal.classList.add(CONSTANTS.OPEN);
+      }
     });
   });
 };

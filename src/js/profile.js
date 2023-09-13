@@ -16,6 +16,7 @@ const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
     _profile.classList.toggle(CONSTANTS.OPEN);
   });
+
 };
 
 //for closing profile menu
@@ -38,13 +39,18 @@ const addClickRegisterHandler = () => {
     _profile.classList.remove(CONSTANTS.OPEN);
   });
 };
-
+//todo open modal profile window
 //open log in window
-const addClickLogInProfileHandler = () => {
+const addClickLogInProfileHandler = (login) => {
   _profileFist.addEventListener(CONSTANTS.CLICK, function (e) {
-    _modalLogin.classList.add(CONSTANTS.OPEN);
-    _overlayModal.classList.add(CONSTANTS.OPEN);
-    _profile.classList.remove(CONSTANTS.OPEN);
+if (login) {
+
+}else{
+  _modalLogin.classList.add(CONSTANTS.OPEN);
+  _overlayModal.classList.add(CONSTANTS.OPEN);
+  _profile.classList.remove(CONSTANTS.OPEN);
+}
+
   });
 };
 
@@ -71,7 +77,6 @@ const addClickOverlayModalHandler = () => {
 
 //open  login modal  window in register window
 const addClickLoginBtnRegisterHandler = () => {
-  console.log(_linkRegister);
   _linkRegister.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
 
@@ -82,7 +87,6 @@ const addClickLoginBtnRegisterHandler = () => {
 
 //open register modal window in login window
 const addClickRegisterBtnLoginHandler = () => {
-  console.log(_linkRegister);
   _linkLogin.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
 
@@ -90,6 +94,19 @@ const addClickRegisterBtnLoginHandler = () => {
     _modalLogin.classList.remove(CONSTANTS.OPEN);
   });
 };
+const changeMenuProfile = (login) => {
+  if(login){
+    _profileFist.textContent = "My profile";
+    _profileSecond.textContent = "Log out"
+  }
+  else{
+    _profileFist.textContent = "Login in";
+    _profileSecond.textContent = "Register";
+
+  }
+
+};
+
 export {
   addClickProfileIconHandler,
   addClickBodyHandler,
@@ -99,4 +116,5 @@ export {
   addClickOverlayModalHandler,
   addClickLoginBtnRegisterHandler,
   addClickRegisterBtnLoginHandler,
+  changeMenuProfile,
 };

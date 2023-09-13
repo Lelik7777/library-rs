@@ -8,7 +8,7 @@ const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
 const _modalRegister = UTILS.getElementFromDom(".modal__register");
 const _modalLogin = UTILS.getElementFromDom(".modal__login");
 const _formButtonContainer = UTILS.getElementFromDom(".form__button");
-const _formIcons = UTILS.getElementFromDom(".form__icons");
+const _formIcons = UTILS.getElementFromDom(".form_left__container .form__icons");
 const _readerNameInput = UTILS.getElementFromDom(".reader-name");
 const _cardNumberInput = UTILS.getElementFromDom(".card-number");
 const _formButtons = UTILS.getElementsFromDom(".form__buttons .button");
@@ -20,7 +20,10 @@ const _formRightText = UTILS.getElementFromDom(".form_right__text");
 //todo 2.Там же после отображения информации, кнопка возвращается в прежнее состояние, а поля в форме сбрасываются. +2
 
 const addClickFormButtonHandler = () => {
-  _formBtn.addEventListener(CONSTANTS.CLICK, function (e) {});
+  _formBtn.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
+
+  });
 };
 
 const addClickSignBtnCardsHandler = () => {

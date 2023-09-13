@@ -21,6 +21,7 @@ import {
   addClickOverlayModalHandler,
   addClickLoginBtnRegisterHandler,
   addClickRegisterBtnLoginHandler,
+  changeMenuProfile,
 } from "./js/profile";
 import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
@@ -29,9 +30,9 @@ import { UTILS } from "./js/utils";
 const startSticky = 1700;
 const endSticky = 4000;
 let login = false;
-alert(
-  "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
-);
+// alert(
+//   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
+// );
 window.addEventListener("load", function () {
   let obj;
   let data = this.localStorage.getItem("form");
@@ -57,11 +58,12 @@ window.addEventListener("load", function () {
   addSliderBtnsHandler();
   addClickArrowLeftHandler();
   addClickArrowRightHandler();
-  addClickProfileIconHandler();
+  addClickProfileIconHandler(login);
   addClickBodyHandler();
   addClickRegisterHandler();
   addClickLoginBtnRegisterHandler();
   addClickRegisterBtnLoginHandler();
+  changeMenuProfile(login);
   addClickBtnCloseHandler();
   addClickOverlayModalHandler();
   addClickFormButtonHandler();
@@ -72,10 +74,10 @@ window.addEventListener("load", function () {
   closeButtons(login);
   changeTextReaderCard(login);
   sendData(addClickRegisterSignUpBtnHandler);
-  changePersonIcon(obj);
+  changePersonIcon(obj,login);
   //for log in in header
-  addClickLogInProfileHandler();
-  addClickCardBtnHandler();
+  addClickLogInProfileHandler(login);
+  addClickCardBtnHandler(login);
   addClickInputRadioHandler();
 
   // document.querySelector('.log-in').addEventListener('click',function(){

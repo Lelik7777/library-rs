@@ -28,8 +28,7 @@
             </ul>
           </nav>
           <div class="header__profile">
-            <span class="profile__icon open"></span>
-            <span title="" class="profile__name"></span>
+            <span class="profile__icon icon__profile open"></span>
             <div class="profile">
               <span class="profile__title">Profile</span>
               <span class="profile__first">Log in</span>
@@ -594,7 +593,7 @@
                 <div class="form__button open">
                   <button class="button">Check the card</button>
                 </div>
-                <div class="form__icons ">
+                <div class="form__icons">
                   <div class="icons__container">
                     <span>Visits</span>
                     <span class="visit"></span>
@@ -610,8 +609,6 @@
                     <span class="book"></span>
                     <span>10</span>
                   </div>
-
-
                 </div>
               </div>
             </form>
@@ -622,9 +619,8 @@
               </p>
               <div class="form__buttons">
                 <button class="button prof">Profile</button>
-                <button class="button sign-up open ">Sign Up</button>
+                <button class="button sign-up open">Sign Up</button>
                 <button class="button log-in open">Log in</button>
-
               </div>
             </form>
           </div>
@@ -674,7 +670,7 @@
       </div>
     </footer>
     <div class="overlay"></div>
-    <div class="overlay__modal">
+    <div class="overlay__modal open">
       <div class="modal__register">
         <div class="register__title">REGISTER</div>
         <form action="#" class="register__form" method="GET" onsubmit="return true">
@@ -717,6 +713,45 @@
           <button class="button register__button">Sign up</button>
         </form>
         <p class="login__text">Don’t have an account?<a class="login__link" href="">Register</a></p>
+        <span class="btn_close"></span>
+      </div>
+      <div class="modal__profile">
+        <div class="profile__left">
+          <div class="profile__photo"></div>
+          <div class="profile__name"></div>
+        </div>
+        <div class="profile__right">
+          <div class="profile__title">My profile</div>
+          <div class="form__icons profile__icons open">
+            <div class="icons__container">
+              <span>Visits</span>
+              <span class="visit"></span>
+              <span>23</span>
+            </div>
+            <div class="icons__container">
+              <span>Bonuses</span>
+              <span class="bonus"></span>
+              <span>1230</span>
+            </div>
+            <div class="icons__container">
+              <span>Books</span>
+              <span class="book"></span>
+              <span>10</span>
+            </div>
+          </div>
+          <div class="profile__books">
+            <div class="profile__subtitle">Rented book</div>
+            <ul class="books__list">
+              <li>The Last Queen, Clive Irving</li>
+              <li>Dominicana, Angie Cruz</li>
+            </ul>
+          </div>
+          <div class="profile__card">
+            <span>Card number</span>
+            <span class="card__number"></span>
+            <span class="card__icon icon__copy"></span>
+          </div>
+        </div>
         <span class="btn_close"></span>
       </div>
     </div>

@@ -53,18 +53,5 @@
 
 .profile__icon {
   cursor: pointer;
-  display: none;
 
-  &.open {
-    display: inline;
-  }
-}
-
-.profile__name {
-  display: none;
-  cursor: pointer;
-
-  &.open {
-    display: inline;
-  }
 }

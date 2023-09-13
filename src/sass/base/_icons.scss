@@ -1,4 +1,4 @@
-.profile__icon {
+.icon__profile {
   display: inline-block;
   width: 28px;
   height: 28px;
@@ -76,4 +76,11 @@
 }
 .book{
   background-image: url('../assets/icons/book.svg');
+}
+
+.icon__copy{
+  width: 14px;
+  height: 12px;
+  display: inline-block;
+  background-image: url(../assets/icons/icon\ copy.svg);
 }
