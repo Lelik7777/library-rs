@@ -124,6 +124,7 @@ _cardIcon.addEventListener(CONSTANTS.CLICK,function(){
 });
 }
 
+
 const showNameUserProfile = (data) => {
   const { firstName, lastName, cardNum } = data;
   _profilePhoto.textContent = `${firstName.slice(0, 1).toUpperCase()}${lastName.slice(0, 1).toUpperCase()}`;
@@ -142,15 +143,5 @@ function copyData(containerClass) {
 }
 
 export {
-  addClickProfileIconHandler,
-  addClickBodyHandler,
-  addClickRegisterHandler,
-  addClickLogInProfileHandler,
-  addClickBtnCloseHandler,
-  addClickOverlayModalHandler,
-  addClickLoginBtnRegisterHandler,
-  addClickRegisterBtnLoginHandler,
-  changeMenuProfile,
-  addClickCopyIconHandler
+  addClickBodyHandler, addClickBtnCloseHandler, addClickCopyIconHandler, addClickLogInProfileHandler, addClickLoginBtnRegisterHandler, addClickOverlayModalHandler, addClickProfileIconHandler, addClickRegisterBtnLoginHandler, addClickRegisterHandler, changeMenuProfile
 };
-

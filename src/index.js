@@ -1,28 +1,29 @@
+import { CONSTANTS } from "./js/config";
 import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
 import {
   addClickFormButtonHandler,
-  addClickSignBtnCardsHandler,
   addClickLogInBtnCardsHandler,
-  closeBtnOpenIcons,
+  addClickSignBtnCardsHandler,
   changeInputsPlaceHolder,
-  closeButtons,
   changeTextReaderCard,
+  closeBtnOpenIcons,
+  closeButtons,
 } from "./js/libraryCards";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
   addClickBodyHandler,
-  addClickLogInProfileHandler,
-  addClickProfileIconHandler,
-  addClickRegisterHandler,
   addClickBtnCloseHandler,
-  addClickOverlayModalHandler,
-  addClickLoginBtnRegisterHandler,
-  addClickRegisterBtnLoginHandler,
-  changeMenuProfile,
   addClickCopyIconHandler,
+  addClickLogInProfileHandler,
+  addClickLoginBtnRegisterHandler,
+  addClickOverlayModalHandler,
+  addClickProfileIconHandler,
+  addClickRegisterBtnLoginHandler,
+  addClickRegisterHandler,
+  changeMenuProfile,
 } from "./js/profile";
 import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
@@ -75,16 +76,12 @@ window.addEventListener("load", function () {
   closeButtons(login);
   changeTextReaderCard(login);
   sendData(addClickRegisterSignUpBtnHandler);
-  changePersonIcon(obj,login);
+  changePersonIcon(obj, login);
   //for log in in header
-  addClickLogInProfileHandler(login,obj);
+  addClickLogInProfileHandler(login, obj);
   addClickCardBtnHandler(login);
   addClickInputRadioHandler();
   addClickCopyIconHandler();
-
-  // document.querySelector('.log-in').addEventListener('click',function(){
-  //   changePersonIcon(data,false)
-  // })
 
   //sticky favorites
   if (window.innerWidth < 769) {
@@ -92,6 +89,8 @@ window.addEventListener("load", function () {
       implementSticky(startSticky, endSticky);
     };
   }
+ 
+
   console.log("login:", login);
 });
 
