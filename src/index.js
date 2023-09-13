@@ -22,6 +22,7 @@ import {
   addClickLoginBtnRegisterHandler,
   addClickRegisterBtnLoginHandler,
   changeMenuProfile,
+  addClickCopyIconHandler,
 } from "./js/profile";
 import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
@@ -60,7 +61,7 @@ window.addEventListener("load", function () {
   addClickArrowRightHandler();
   addClickProfileIconHandler(login);
   addClickBodyHandler();
-  addClickRegisterHandler();
+  addClickRegisterHandler(login);
   addClickLoginBtnRegisterHandler();
   addClickRegisterBtnLoginHandler();
   changeMenuProfile(login);
@@ -76,9 +77,10 @@ window.addEventListener("load", function () {
   sendData(addClickRegisterSignUpBtnHandler);
   changePersonIcon(obj,login);
   //for log in in header
-  addClickLogInProfileHandler(login);
+  addClickLogInProfileHandler(login,obj);
   addClickCardBtnHandler(login);
   addClickInputRadioHandler();
+  addClickCopyIconHandler();
 
   // document.querySelector('.log-in').addEventListener('click',function(){
   //   changePersonIcon(data,false)

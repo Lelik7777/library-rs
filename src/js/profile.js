@@ -11,12 +11,16 @@ const _profileFist = UTILS.getElementFromDom(".profile__first");
 const _modalLogin = UTILS.getElementFromDom(".modal__login");
 const _linkRegister = UTILS.getElementFromDom(".register__link");
 const _linkLogin = UTILS.getElementFromDom(".login__link");
+const _profileModal = UTILS.getElementFromDom(".modal__profile");
+const _profilePhoto = UTILS.getElementFromDom(".profile__photo");
+const _profileName = UTILS.getElementFromDom(".profile__name");
+const _cardNumber = UTILS.getElementFromDom(".profile__card .card__number");
+const _cardIcon = UTILS.getElementFromDom(".profile__card .card__icon");
 
 const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
     _profile.classList.toggle(CONSTANTS.OPEN);
   });
-
 };
 
 //for closing profile menu
@@ -32,25 +36,32 @@ const addClickBodyHandler = () => {
   });
 };
 //open register modal window
-const addClickRegisterHandler = () => {
+const addClickRegisterHandler = (login) => {
   _profileSecond.addEventListener(CONSTANTS.CLICK, function (e) {
-    _overlayModal.classList.add(CONSTANTS.OPEN);
-    _modalRegister.classList.add(CONSTANTS.OPEN);
-    _profile.classList.remove(CONSTANTS.OPEN);
+    if (login) {
+      console.log("log out");
+    } else {
+      _overlayModal.classList.add(CONSTANTS.OPEN);
+      _modalRegister.classList.add(CONSTANTS.OPEN);
+      _profile.classList.remove(CONSTANTS.OPEN);
+    }
   });
 };
 //todo open modal profile window
 //open log in window
-const addClickLogInProfileHandler = (login) => {
+const addClickLogInProfileHandler = (login, data) => {
   _profileFist.addEventListener(CONSTANTS.CLICK, function (e) {
-if (login) {
-
-}else{
-  _modalLogin.classList.add(CONSTANTS.OPEN);
-  _overlayModal.classList.add(CONSTANTS.OPEN);
-  _profile.classList.remove(CONSTANTS.OPEN);
-}
-
+    if (login) {
+      _overlayModal.classList.add(CONSTANTS.OPEN);
+      _profileModal.classList.add(CONSTANTS.OPEN);
+      _profile.classList.remove(CONSTANTS.OPEN);
+      data && showNameUserProfile(data);
+    } else {
+      console.log("click else");
+      _modalLogin.classList.add(CONSTANTS.OPEN);
+      _overlayModal.classList.add(CONSTANTS.OPEN);
+      _profile.classList.remove(CONSTANTS.OPEN);
+    }
   });
 };
 
@@ -67,7 +78,11 @@ const addClickBtnCloseHandler = () => {
 
 const addClickOverlayModalHandler = () => {
   _overlayModal.addEventListener(CONSTANTS.CLICK, function (e) {
-    if (!e.target.closest(".modal__register") && !e.target.closest(".modal__login")) {
+    if (
+      !e.target.closest(".modal__register") &&
+      !e.target.closest(".modal__login") &&
+      !e.target.closest(".modal__profile")
+    ) {
       this.classList.remove(CONSTANTS.OPEN);
       _modalRegister.classList.remove(CONSTANTS.OPEN);
       _modalLogin.classList.remove(CONSTANTS.OPEN);
@@ -95,17 +110,36 @@ const addClickRegisterBtnLoginHandler = () => {
   });
 };
 const changeMenuProfile = (login) => {
-  if(login){
+  if (login) {
     _profileFist.textContent = "My profile";
-    _profileSecond.textContent = "Log out"
-  }
-  else{
+    _profileSecond.textContent = "Log out";
+  } else {
     _profileFist.textContent = "Login in";
     _profileSecond.textContent = "Register";
-
   }
-
 };
+const addClickCopyIconHandler=()=>{
+_cardIcon.addEventListener(CONSTANTS.CLICK,function(){
+  copyData(_cardNumber)
+});
+}
+
+const showNameUserProfile = (data) => {
+  const { firstName, lastName, cardNum } = data;
+  _profilePhoto.textContent = `${firstName.slice(0, 1).toUpperCase()}${lastName.slice(0, 1).toUpperCase()}`;
+  _profileName.textContent = `${firstName} ${lastName}`;
+  _cardNumber.textContent = cardNum;
+};
+
+function copyData(containerClass) {
+  var range = document.createRange();
+  range.selectNode(containerClass); //changed here
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  alert("data copied");
+}
 
 export {
   addClickProfileIconHandler,
@@ -117,4 +151,6 @@ export {
   addClickLoginBtnRegisterHandler,
   addClickRegisterBtnLoginHandler,
   changeMenuProfile,
+  addClickCopyIconHandler
 };
+
