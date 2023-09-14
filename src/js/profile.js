@@ -40,12 +40,14 @@ const addClickBodyHandler = () => {
 const addClickRegisterHandler = (login) => {
   _profileSecond.addEventListener(CONSTANTS.CLICK, function (e) {
     if (login) {
-    const data=JSON.parse(window.localStorage.getItem('form'));
-    data.login=false;
-    console.log(data);
-    window.localStorage.setItem('form',JSON.stringify(data));
-    console.log(window.localStorage.getItem('form'));
-    location.reload();
+      const data = JSON.parse(window.localStorage.getItem("form"));
+      data.login = false;
+      console.log(data);
+      window.localStorage.setItem("form", JSON.stringify(data));
+      console.log(window.localStorage.getItem("form"));
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
     } else {
       _overlayModal.classList.add(CONSTANTS.OPEN);
       _modalRegister.classList.add(CONSTANTS.OPEN);

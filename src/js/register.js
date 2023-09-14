@@ -15,7 +15,9 @@ const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
     if (Object.values(data).filter((x) => x !== "").length > 6 && data.password.length >= 8) {
       saveForm(data);
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1);
       _overlayModal.classList.remove(CONSTANTS.OPEN);
       _modalRegister.classList.remove(CONSTANTS.OPEN);
     } else {
