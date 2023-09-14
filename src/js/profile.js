@@ -16,6 +16,7 @@ const _profilePhoto = UTILS.getElementFromDom(".profile__photo");
 const _profileName = UTILS.getElementFromDom(".profile__name");
 const _cardNumber = UTILS.getElementFromDom(".profile__card .card__number");
 const _cardIcon = UTILS.getElementFromDom(".profile__card .card__icon");
+const _profileTitle = UTILS.getElementFromDom(".profile .profile__title");
 
 const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
@@ -39,7 +40,12 @@ const addClickBodyHandler = () => {
 const addClickRegisterHandler = (login) => {
   _profileSecond.addEventListener(CONSTANTS.CLICK, function (e) {
     if (login) {
-      console.log("log out");
+    const data=JSON.parse(window.localStorage.getItem('form'));
+    data.login=false;
+    console.log(data);
+    window.localStorage.setItem('form',JSON.stringify(data));
+    console.log(window.localStorage.getItem('form'));
+    location.reload();
     } else {
       _overlayModal.classList.add(CONSTANTS.OPEN);
       _modalRegister.classList.add(CONSTANTS.OPEN);
@@ -109,21 +115,22 @@ const addClickRegisterBtnLoginHandler = () => {
     _modalLogin.classList.remove(CONSTANTS.OPEN);
   });
 };
-const changeMenuProfile = (login) => {
+const changeMenuProfile = (login, data) => {
   if (login) {
     _profileFist.textContent = "My profile";
     _profileSecond.textContent = "Log out";
+    _profileTitle.textContent = data.cardNum;
   } else {
     _profileFist.textContent = "Login in";
     _profileSecond.textContent = "Register";
+    _profileTitle.textContent = "Profile";
   }
 };
-const addClickCopyIconHandler=()=>{
-_cardIcon.addEventListener(CONSTANTS.CLICK,function(){
-  copyData(_cardNumber)
-});
-}
-
+const addClickCopyIconHandler = () => {
+  _cardIcon.addEventListener(CONSTANTS.CLICK, function () {
+    copyData(_cardNumber);
+  });
+};
 
 const showNameUserProfile = (data) => {
   const { firstName, lastName, cardNum } = data;
@@ -143,5 +150,14 @@ function copyData(containerClass) {
 }
 
 export {
-  addClickBodyHandler, addClickBtnCloseHandler, addClickCopyIconHandler, addClickLogInProfileHandler, addClickLoginBtnRegisterHandler, addClickOverlayModalHandler, addClickProfileIconHandler, addClickRegisterBtnLoginHandler, addClickRegisterHandler, changeMenuProfile
+  addClickBodyHandler,
+  addClickBtnCloseHandler,
+  addClickCopyIconHandler,
+  addClickLogInProfileHandler,
+  addClickLoginBtnRegisterHandler,
+  addClickOverlayModalHandler,
+  addClickProfileIconHandler,
+  addClickRegisterBtnLoginHandler,
+  addClickRegisterHandler,
+  changeMenuProfile,
 };

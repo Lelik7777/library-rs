@@ -14,6 +14,8 @@ const _cardNumberInput = UTILS.getElementFromDom(".card-number");
 const _formButtons = UTILS.getElementsFromDom(".form__buttons .button");
 const _formRightTitle = UTILS.getElementFromDom(".form_right__title");
 const _formRightText = UTILS.getElementFromDom(".form_right__text");
+const _btnProfileCards = UTILS.getElementFromDom(".form__buttons .prof");
+const _profileModal = UTILS.getElementFromDom(".modal__profile");
 
 //todo При наличии регистрации, но будучи не авторизованным:
 //todo 1.Если введённые имя и номер карты совпадают с данными пользователя, то отображается панель с информацией, вместо кнопки Check the card на 10 секунд. +2
@@ -22,12 +24,12 @@ const _formRightText = UTILS.getElementFromDom(".form_right__text");
 const addClickFormButtonHandler = () => {
   _formBtn.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
-
   });
 };
 
 const addClickSignBtnCardsHandler = () => {
   _btnSignUp.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
     _overlayModal.classList.add(CONSTANTS.OPEN);
     _modalRegister.classList.add(CONSTANTS.OPEN);
   });
@@ -35,6 +37,7 @@ const addClickSignBtnCardsHandler = () => {
 
 const addClickLogInBtnCardsHandler = () => {
   _btnLoginIn.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
     _modalLogin.classList.add(CONSTANTS.OPEN);
     _overlayModal.classList.add(CONSTANTS.OPEN);
   });
@@ -87,6 +90,16 @@ const changeTextReaderCard = (login) => {
       " You will be able to see a reader card after logging into account or you can register a new account";
   }
 };
+
+const addClickProfileBtnCards = () => {
+  _btnProfileCards.addEventListener(CONSTANTS.CLICK, function (e) {
+    e.preventDefault();
+    console.log('click profile btn cards');
+    _overlayModal.classList.add(CONSTANTS.OPEN);
+    _profileModal.classList.add(CONSTANTS.OPEN);
+  });
+};
+
 export {
   addClickFormButtonHandler,
   addClickSignBtnCardsHandler,
@@ -95,4 +108,5 @@ export {
   changeInputsPlaceHolder,
   closeButtons,
   changeTextReaderCard,
+  addClickProfileBtnCards,
 };

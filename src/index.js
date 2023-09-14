@@ -1,4 +1,3 @@
-import { CONSTANTS } from "./js/config";
 import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
@@ -6,12 +5,14 @@ import "./js/libraryCards";
 import {
   addClickFormButtonHandler,
   addClickLogInBtnCardsHandler,
+  addClickProfileBtnCards,
   addClickSignBtnCardsHandler,
   changeInputsPlaceHolder,
   changeTextReaderCard,
   closeBtnOpenIcons,
   closeButtons,
 } from "./js/libraryCards";
+import { addClickBtnSignUpLoginHandler } from "./js/login";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
   addClickBodyHandler,
@@ -46,13 +47,15 @@ window.addEventListener("load", function () {
   }
 
   if (obj) {
-    login = true;
+    login =obj.login;
+  } else {
+    login = obj?.login||false;
   }
 
-  if (this.localStorage.getItem("form") !== "null") {
-    const dataFromStorage = this.localStorage.getItem("form");
-    if (!dataFromStorage === "undefined") data = JSON.parse(dataFromStorage);
-  }
+  // if (this.localStorage.getItem("form") !== "null") {
+  //   const dataFromStorage = this.localStorage.getItem("form");
+  //   if (!dataFromStorage === "undefined") data = JSON.parse(dataFromStorage);
+  // }
 
   addHamburgerClickHandler();
   addOverlayClickHandler();
@@ -65,7 +68,7 @@ window.addEventListener("load", function () {
   addClickRegisterHandler(login);
   addClickLoginBtnRegisterHandler();
   addClickRegisterBtnLoginHandler();
-  changeMenuProfile(login);
+  changeMenuProfile(login, obj);
   addClickBtnCloseHandler();
   addClickOverlayModalHandler();
   addClickFormButtonHandler();
@@ -74,6 +77,7 @@ window.addEventListener("load", function () {
   closeBtnOpenIcons(login);
   changeInputsPlaceHolder(login, obj);
   closeButtons(login);
+  addClickProfileBtnCards();
   changeTextReaderCard(login);
   sendData(addClickRegisterSignUpBtnHandler);
   changePersonIcon(obj, login);
@@ -82,6 +86,7 @@ window.addEventListener("load", function () {
   addClickCardBtnHandler(login);
   addClickInputRadioHandler();
   addClickCopyIconHandler();
+  addClickBtnSignUpLoginHandler();
 
   //sticky favorites
   if (window.innerWidth < 769) {
@@ -89,7 +94,6 @@ window.addEventListener("load", function () {
       implementSticky(startSticky, endSticky);
     };
   }
- 
 
   console.log("login:", login);
 });

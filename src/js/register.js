@@ -10,20 +10,22 @@ const _inputs = UTILS.getElementsFromDom(".register__form .input");
 const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
 const _modalRegister = UTILS.getElementFromDom(".modal__register");
 
-
 //todo close register modal window
 const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
-    if (Object.values(data).filter((x) => x !== "").length > 4) {
+    if (Object.values(data).filter((x) => x !== "").length > 6 && data.password.length >= 8) {
       saveForm(data);
       window.location.reload();
-      // _overlayModal.classList.remove(CONSTANTS.OPEN);
-      // _modalRegister.classList.remove(CONSTANTS.OPEN);
+      _overlayModal.classList.remove(CONSTANTS.OPEN);
+      _modalRegister.classList.remove(CONSTANTS.OPEN);
+    } else {
+      console.log("check inputs");
     }
   });
 };
 const sendData = (callback) => {
   const form = getDataFromForm();
+
   callback(form);
 };
 
@@ -34,8 +36,11 @@ const getDataFromForm = () => {
       form.firstName = _firstName.value;
       form.lastName = _lastName.value;
       form.email = _email.value;
-      form.password = _password.value;
+
+      form.password = _password.value >= 8 ? _password.value : "";
       form.cardNum = getHexNum();
+      form.login = true;
+      form.registration = true;
     });
   });
 
