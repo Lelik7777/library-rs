@@ -10,7 +10,7 @@ const _inputs = UTILS.getElementsFromDom(".register__form .input");
 const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
 const _modalRegister = UTILS.getElementFromDom(".modal__register");
 
-//todo close register modal window
+
 const addClickRegisterSignUpBtnHandler = (data) => {
   _registerBtn.addEventListener(CONSTANTS.CLICK, function (e) {
     if (Object.values(data).filter((x) => x !== "").length > 6 && data.password.length >= 8) {

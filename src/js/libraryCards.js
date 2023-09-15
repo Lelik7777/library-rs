@@ -17,13 +17,23 @@ const _formRightText = UTILS.getElementFromDom(".form_right__text");
 const _btnProfileCards = UTILS.getElementFromDom(".form__buttons .prof");
 const _profileModal = UTILS.getElementFromDom(".modal__profile");
 
-//todo При наличии регистрации, но будучи не авторизованным:
-//todo 1.Если введённые имя и номер карты совпадают с данными пользователя, то отображается панель с информацией, вместо кнопки Check the card на 10 секунд. +2
-//todo 2.Там же после отображения информации, кнопка возвращается в прежнее состояние, а поля в форме сбрасываются. +2
 
-const addClickFormButtonHandler = () => {
+const addClickFormButtonHandler = (data) => {
   _formBtn.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
+
+    if (data) {
+      if (_readerNameInput.value === `${data.firstName} ${data.lastName}` && _cardNumberInput.value === data.cardNum) {
+        _formBtn.style.display = "none";
+        _formIcons.classList.add(CONSTANTS.OPEN);
+        setTimeout(() => {
+          _formBtn.style.display = "inline-block";
+          _formIcons.classList.remove(CONSTANTS.OPEN);
+        }, 10_000);
+      } else {
+        alert("data not valid");
+      }
+    }
   });
 };
 
@@ -94,7 +104,7 @@ const changeTextReaderCard = (login) => {
 const addClickProfileBtnCards = () => {
   _btnProfileCards.addEventListener(CONSTANTS.CLICK, function (e) {
     e.preventDefault();
-    console.log('click profile btn cards');
+    console.log("click profile btn cards");
     _overlayModal.classList.add(CONSTANTS.OPEN);
     _profileModal.classList.add(CONSTANTS.OPEN);
   });

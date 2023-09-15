@@ -71,7 +71,7 @@ window.addEventListener("load", function () {
   changeMenuProfile(login, obj);
   addClickBtnCloseHandler();
   addClickOverlayModalHandler();
-  addClickFormButtonHandler();
+  addClickFormButtonHandler(obj);
   addClickSignBtnCardsHandler();
   addClickLogInBtnCardsHandler();
   closeBtnOpenIcons(login);
