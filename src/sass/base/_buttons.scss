@@ -40,3 +40,13 @@
   background-image: url("../assets/icons/close_btn.svg");
   cursor: pointer;
 }
+.card__btn_close{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-image: url("../assets/icons/close_btn_white.svg");
+  cursor: pointer;
+}

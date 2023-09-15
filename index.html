@@ -670,7 +670,7 @@
       </div>
     </footer>
     <div class="overlay"></div>
-    <div class="overlay__modal">
+    <div class="overlay__modal ">
       <div class="modal__register">
         <div class="register__title">REGISTER</div>
         <form action="#" class="register__form" method="GET" onsubmit="return true">
@@ -699,7 +699,7 @@
       </div>
       <div class="modal__login">
         <div class="login__title">LOGIN</div>
-        <form action="##" class="login__form" method="get">
+        <form action="#" class="login__form" method="get">
           <div class="login__inputs">
             <p class="mail input__container">
               <label class="login__label" for="email_login">E-mail or readers card </label>
@@ -753,6 +753,54 @@
           </div>
         </div>
         <span class="btn_close"></span>
+      </div>
+      <div class="modal__card">
+        <div class="modal__card__title">Buy a library card</div>
+        <div class="card__block">
+          <div class="card__container__form">
+            <form action="#" class="card__form">
+              <p class="card__form__bank">
+                <label for="bank__card__number">Bank card number</label>
+                <input type="text" class="card__input" required id="bank__card__number" minlength="9" maxlength="9" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" />
+              </p>
+              <p class="card__form__code">
+                <label >Expiration code</label>
+                <span>
+                  <input id="exp-code_1" type="text" class="card__input" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" minlength="3" maxlength="3"/>
+                  <input id="exp-code_2" type="text" class="card__input" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"  minlength="3" maxlength="3"/>
+                </span>
+
+              </p>
+              <p class="card__form_cvc">
+                <label for="card__cvc">CVC</label>
+                <input type="text" class="card__input" id="card__cvc" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" minlength="3" maxlength="3" />
+              </p>
+              <p class="card__form__name">
+                <label for="card__name">Cardholder name</label>
+                <input type="text" class="card__input" id="card__name" required />
+              </p>
+              <p class="card__form__postal">
+                <label for="card__postal">Postal code</label>
+                <input type="text" class="card__input" id="card__postal" required />
+              </p>
+              <p class="card__form__city">
+                <label for="card__city">City/Town</label>
+                <input type="text" class="card__input" id="card__city" required />
+              </p>
+              <div class="modal__card__form__button ">
+                <button class="button ">Buy</button>
+                <span class="card__cost">$25.0</span>
+              </div>
+            </form>
+          </div>
+          <div class="card__context">
+            If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital
+            library card right now using this online form. Visitors to New York State can also use this form to apply
+            for a temporary card.
+          </div>
+        </div>
+
+        <span class="card__btn_close"></span>
       </div>
     </div>
   </body>

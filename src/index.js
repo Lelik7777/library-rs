@@ -1,4 +1,4 @@
-import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
+import { addClickCardBtnHandler, addClickInputRadioHandler, getDateFromForm } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
@@ -30,8 +30,9 @@ import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 
-
-
+//! delete!!!
+const _inputs=UTILS.getElementsFromDom('.card__container__form input');
+//
 const _visitNumbers=UTILS.getElementFromDom(".icons__container .visit__numbers");
 const startSticky = 1700;
 const endSticky = 4000;
@@ -91,6 +92,10 @@ window.addEventListener("load", function () {
   addClickInputRadioHandler();
   addClickCopyIconHandler();
   addClickBtnSignUpLoginHandler();
+
+  //!delete
+  console.log(_inputs);
+  //getDateFromForm(_inputs)
 
   //sticky favorites
   if (window.innerWidth < 769) {

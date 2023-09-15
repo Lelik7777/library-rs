@@ -17,7 +17,7 @@ const _profileName = UTILS.getElementFromDom(".profile__name");
 const _cardNumber = UTILS.getElementFromDom(".profile__card .card__number");
 const _cardIcon = UTILS.getElementFromDom(".profile__card .card__icon");
 const _profileTitle = UTILS.getElementFromDom(".profile .profile__title");
-const _visitNumbers=UTILS.getElementFromDom(".icons__container .visit__numbers");
+
 
 const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
@@ -91,7 +91,8 @@ const addClickOverlayModalHandler = () => {
     if (
       !e.target.closest(".modal__register") &&
       !e.target.closest(".modal__login") &&
-      !e.target.closest(".modal__profile")
+      !e.target.closest(".modal__profile")&&
+      !e.target.closest(".modal__card")
     ) {
       this.classList.remove(CONSTANTS.OPEN);
       _modalRegister.classList.remove(CONSTANTS.OPEN);
