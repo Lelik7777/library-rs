@@ -1,0 +1,63 @@
+.contacts {
+  padding: 0 0 60px;
+}
+
+.contacts__title {
+  text-align: center;
+  margin: 0 0 61px;
+}
+
+.contacts__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+
+.contacts__data {
+  @include font(2rem);
+  @include flex(40px);
+}
+
+.data__title {
+  font-weight: 700;
+
+  @extend %transition;
+ 
+  &:hover{
+    text-shadow: 1px 0 0 $color-primary;
+  }
+
+  .data__director & {
+    margin: 0 0 20px;
+  }
+}
+
+.data__phones {
+  @include flex(20px);
+
+  & a {
+    @extend %transition;
+  }
+
+  & a:hover {
+    text-shadow: 1px 0 0 $color-dark;
+  }
+
+}
+
+.contacts__map {
+  display: flex;
+
+  @include media {
+    align-self: center;
+  }
+
+  @include media(720px) {
+    width: 100%;
+  }
+}

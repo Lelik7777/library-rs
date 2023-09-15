@@ -1,0 +1,27 @@
+%font-primary {
+  font-family: Inter, sans-serif;
+}
+
+%font-secondary {
+  font-family: Forum, cursive;
+}
+
+%transition {
+  transition: all 0.3s ease-in-out;
+}
+
+%custom-scroll {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 50%);
+  }
+}

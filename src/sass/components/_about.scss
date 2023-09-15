@@ -1,0 +1,138 @@
+.about {
+  padding: 20px 0 40px;
+
+  @include media {
+    padding: 20px 0 45px;
+  }
+}
+
+.about__title {
+  text-align: center;
+  margin: 0 0 61px;
+  position: relative;
+}
+
+.about__text {
+  @include font(2rem, $spacing: 0);
+
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+//slider
+.about__slider {
+  overflow: hidden;
+
+  @include media {
+    width: 568px;
+    margin: auto;
+    padding: 0 58px;
+  }
+}
+
+.slider__wrapper {
+  position: relative;
+}
+
+.slider__button_left {
+  display: none;
+
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    left: -58px;
+    cursor: pointer;
+  }
+
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+
+.slider__button_right {
+  display: none;
+
+  @include media {
+    display: block;
+    position: absolute;
+    top: 51.5%;
+    right: -58px;
+    cursor: pointer;
+  }
+
+  &.disabled{
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+
+.slider__container {
+  display: flex;
+  gap: 25px;
+  margin: 0 0 35px;
+  position: relative;
+  transition: all 1s;
+
+  @include media {
+    gap: 70px;
+    margin: 0 0 20px;
+  }
+
+  &.one {
+    transform: translateX(0);
+  }
+
+  &.two {
+    transform: translateX(-475px);
+  }
+
+  &.three {
+    transform: translateX(-950px);
+  }
+
+  &.two_2 {
+    transform: translateX(-520px);
+  }
+
+  &.three_3 {
+    transform: translateX(-1040px);
+  }
+
+  &.four {
+    transform: translateX(-1560px);
+  }
+
+  &.five {
+    transform: translateX(-2080px);
+  }
+}
+
+.slider__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 10px;
+}
+
+.button__container {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.last-child {
+    display: none;
+
+    @include media {
+      display: inherit;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}

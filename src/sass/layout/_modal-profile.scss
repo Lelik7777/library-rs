@@ -1,0 +1,84 @@
+.modal__profile {
+  display: none;
+  width: 600px;
+  height: 400px;
+  position: fixed;
+  z-index: 11;
+  background-color: $color-light;
+  @include font(2rem, 2rem);
+
+  &.open {
+    display: flex;
+  }
+}
+.profile__left {
+  width: 170px;
+  background-color: $color-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include font(2rem, 2rem);
+}
+.profile__photo {
+  background-color: $color-light;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-secondary;
+
+  text-transform: uppercase;
+}
+.profile__name {
+  background-color: $color-light;
+  width: 80%;
+  height: min-content;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.profile__right {
+  padding: 40px 20px;
+
+  & .profile__title {
+    @include font(4rem);
+
+    &:after {
+      content: "";
+      display: none;
+    }
+  }
+  & .profile__icons.open {
+    justify-content: start;
+  }
+}
+.profile__subtitle {
+  @include font(2.5rem, $spacing: normal);
+  margin-bottom: 30px;
+}
+.books__list {
+  text-transform: capitalize;
+  list-style-type: disc;
+  margin: 0 0 40px 20px;
+
+  & li {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.card__number {
+  color: $color-secondary;
+}
+.profile__card {
+  @include font(2rem, 2rem, $spacing: normal);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

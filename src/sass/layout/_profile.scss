@@ -1,0 +1,42 @@
+.profile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: 115px;
+  position: absolute;
+  top: 43px;
+  right: 0;
+  background-color: $color-light;
+  z-index: 10;
+  color: $color-dark;
+
+  @include font(1.5rem, 2rem, $spacing: 0);
+
+  @include media {
+    right: 85px;
+  }
+
+  &.open {
+    display: flex;
+  }
+}
+
+.profile__title {
+  margin: 5px 0 20px;
+
+  &::after {
+    content: "";
+    display: block;
+    border: 1px solid $color-secondary;
+  }
+}
+
+.profile__first,
+.profile__second {
+  cursor: pointer;
+}
+
+.profile__first{
+  margin: 0 0 10px;
+}

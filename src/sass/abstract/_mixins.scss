@@ -1,0 +1,43 @@
+@mixin media($resolution: $tablet) {
+  @if $resolution==tablet {
+    @media (max-width: $width-tablet) {
+      @content;
+    }
+  }
+
+  @if $resolution==mobile {
+    @media (max-width: $width-mobile) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $resolution) {
+      @content;
+    }
+  }
+}
+
+@mixin font(
+  $size: 1.5rem,
+  $height: 4rem,
+  $weight: 400,
+  $style: normal,
+  $spacing: 0.2rem
+) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
+  letter-spacing: $spacing;
+}
+
+@mixin hover() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin flex($gap:0, $direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}

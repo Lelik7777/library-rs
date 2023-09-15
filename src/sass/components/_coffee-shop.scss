@@ -1,0 +1,95 @@
+.coffee-shop {
+  padding: 0 0 60px;
+}
+
+.coffee-shop__title {
+  text-align: center;
+  margin: 0 0 61px;
+}
+
+.coffee-shop__text {
+  @include font(2rem);
+
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.coffee-shop__price {
+  display: flex;
+  justify-content: space-between;
+
+  @include media {
+    flex-flow: column;
+    gap: 40px;
+  }
+}
+
+.price__first,
+.price__second {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.price__first {
+  flex-basis: 442px;
+  max-width: 442px;
+}
+
+.price__second {
+  flex-basis: 482px;
+}
+
+.price__title {
+  &::after {
+    display: none;
+  }
+
+  &.second {
+    text-align: right;
+  }
+
+  &.first,
+  &.second {
+    color: $color-secondary;
+  }
+}
+
+.price__items {
+  @include flex(40px);
+
+  // display: flex;
+  // flex-direction: column;
+  // gap: 40px;
+}
+
+.price__item {
+  @include font(2rem);
+
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.right {
+    text-align: right;
+    gap: 50px;
+
+    & .price__title {
+      flex-grow: 1;
+    }
+  }
+
+  & span:last-child {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+}
+
+.price__line {
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background-image: url("../assets/icons/Line 2.svg");
+}
