@@ -42,7 +42,7 @@ const getDataFromForm = () => {
       form.password = _password.value >= 8 ? _password.value : "";
       form.cardNum = getHexNum();
       form.login = true;
-      form.registration = true;
+      form.visits=1;
     });
   });
 

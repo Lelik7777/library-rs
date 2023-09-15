@@ -29,6 +29,8 @@ const addClickFormButtonHandler = (data) => {
         setTimeout(() => {
           _formBtn.style.display = "inline-block";
           _formIcons.classList.remove(CONSTANTS.OPEN);
+          _cardNumberInput.value='';
+          _readerNameInput.value='';
         }, 10_000);
       } else {
         alert("data not valid");

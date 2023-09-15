@@ -16,6 +16,7 @@ const addClickBtnSignUpLoginHandler = () => {
       }
       if ((_email.value === form.email || _email.value === form.cardNum) && _password.value === form.password) {
         form.login = true;
+        form.visits++;
         window.localStorage.setItem("form", JSON.stringify(form));
        setTimeout(()=>{
         window.location.reload();

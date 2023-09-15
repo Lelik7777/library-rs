@@ -30,6 +30,9 @@ import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 
+
+
+const _visitNumbers=UTILS.getElementFromDom(".icons__container .visit__numbers");
 const startSticky = 1700;
 const endSticky = 4000;
 let login = false;
@@ -42,6 +45,7 @@ window.addEventListener("load", function () {
   console.log(data);
   if (data || data !== "undefined") {
     obj = JSON.parse(data);
+    _visitNumbers.textContent=obj.visits;
   } else {
     obj = null;
   }
