@@ -12,7 +12,7 @@ import {
   closeBtnOpenIcons,
   closeButtons,
 } from "./js/libraryCards";
-import { addClickBuyBtnCardHandler } from "./js/modal_card";
+import { addClickBuyBtnCardHandler, addClickCloseBtnModalCardHandler } from "./js/modal_card";
 import { addClickBtnSignUpLoginHandler } from "./js/login";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
@@ -32,7 +32,9 @@ import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandl
 import { UTILS } from "./js/utils";
 
 //
-const _visitNumbers = UTILS.getElementFromDom(".icons__container .visit__numbers");
+const _visitNumbers = UTILS.getElementsFromDom(".visit__numbers");
+const _booksNumber=UTILS.getElementsFromDom('.books-number');
+const _booksList=UTILS.getElementFromDom('.books__list');
 const startSticky = 1700;
 const endSticky = 4000;
 let login = false;
@@ -93,6 +95,7 @@ window.addEventListener("load", function () {
 
   //modal_card.js
   addClickBuyBtnCardHandler();
+  addClickCloseBtnModalCardHandler();
 
   //sticky favorites
   if (window.innerWidth < 769) {
@@ -134,6 +137,14 @@ function setData() {
   }
   return data;
 }
+
 function setDataForProfile(data) {
-  _visitNumbers.textContent = data.visits;
+  console.log(_visitNumbers);
+ _visitNumbers.forEach(node=>node.textContent = data.visits);
+  _booksNumber.forEach(node=>node.textContent=data.countBooks);
+  data.books.forEach(book=>{
+    const li=document.createElement('li');
+    li.textContent=book;
+    _booksList.append(li);
+  })
 }

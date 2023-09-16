@@ -11,6 +11,13 @@ const _city = UTILS.getElementFromDom("#card__city");
 const _buyBtn = UTILS.getElementFromDom(".modal__card__form__button .button");
 const _overlayModal = UTILS.getElementFromDom(".overlay__modal");
 const _modalCard = UTILS.getElementFromDom(".modal__card");
+const _closeBtn = UTILS.getElementFromDom(".modal__card .card__btn_close");
+
+const addClickCloseBtnModalCardHandler = () => {
+  _closeBtn.addEventListener(CONSTANTS.CLICK, function (e) {
+    closeWindow();
+  });
+};
 
 const addClickBuyBtnCardHandler = () => {
   _buyBtn.addEventListener(CONSTANTS.CLICK, function (e) {
@@ -24,10 +31,7 @@ const addClickBuyBtnCardHandler = () => {
       data.postal.length > 3 &&
       data.city.length > 4
     ) {
-      _overlayModal.classList.remove(CONSTANTS.OPEN);
-      _modalCard.classList.remove(CONSTANTS.OPEN);
-
-      const data = UTILS.getDataFromStorage();
+      closeWindow();
 
       setTimeout(() => {
         location.reload();
@@ -50,4 +54,8 @@ const fillForm = () => {
   return form;
 };
 
-export { addClickBuyBtnCardHandler };
+function closeWindow() {
+  _overlayModal.classList.remove(CONSTANTS.OPEN);
+  _modalCard.classList.remove(CONSTANTS.OPEN);
+}
+export { addClickBuyBtnCardHandler, addClickCloseBtnModalCardHandler };

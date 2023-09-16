@@ -16,7 +16,10 @@ const addClickCardBtnHandler = (login) => {
         _cardModal.classList.add(CONSTANTS.OPEN);
         btn.textContent = "Own";
         btn.disabled = true;
-        const book = btn.closest(".card").querySelector(".card_subtitle").textContent;
+        const book = btn
+          .closest(".card")
+          .querySelector(".card_subtitle")
+          .textContent.replace(/\n+\s+/g, "");
         let data = UTILS.getDataFromStorage();
         data.books.push(book);
         data.countBooks++;
