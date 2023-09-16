@@ -56,7 +56,7 @@ const addClickRegisterHandler = (login) => {
     }
   });
 };
-//todo open modal profile window
+
 //open log in window
 const addClickLogInProfileHandler = (login, data) => {
   _profileFist.addEventListener(CONSTANTS.CLICK, function (e) {

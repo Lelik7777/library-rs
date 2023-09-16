@@ -1,4 +1,4 @@
-import { addClickCardBtnHandler, addClickInputRadioHandler, getDateFromForm } from "./js/favorites";
+import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
@@ -30,16 +30,15 @@ import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 
-//! delete!!!
-const _inputs=UTILS.getElementsFromDom('.card__container__form input');
+
 //
 const _visitNumbers=UTILS.getElementFromDom(".icons__container .visit__numbers");
 const startSticky = 1700;
 const endSticky = 4000;
 let login = false;
-// alert(
-//   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
-// );
+
+
+
 window.addEventListener("load", function () {
   let obj;
   let data = this.localStorage.getItem("form");
@@ -56,18 +55,17 @@ window.addEventListener("load", function () {
   } else {
     login = obj?.login||false;
   }
-
-  // if (this.localStorage.getItem("form") !== "null") {
-  //   const dataFromStorage = this.localStorage.getItem("form");
-  //   if (!dataFromStorage === "undefined") data = JSON.parse(dataFromStorage);
-  // }
-
+//popUp.js
   addHamburgerClickHandler();
   addOverlayClickHandler();
   addNavItemsClickHandler();
+
+//slider.js
   addSliderBtnsHandler();
   addClickArrowLeftHandler();
   addClickArrowRightHandler();
+
+//profile.js
   addClickProfileIconHandler(login);
   addClickBodyHandler();
   addClickRegisterHandler(login);
@@ -76,6 +74,10 @@ window.addEventListener("load", function () {
   changeMenuProfile(login, obj);
   addClickBtnCloseHandler();
   addClickOverlayModalHandler();
+  addClickCopyIconHandler();
+  addClickLogInProfileHandler(login, obj);
+
+//libraryCards.js
   addClickFormButtonHandler(obj);
   addClickSignBtnCardsHandler();
   addClickLogInBtnCardsHandler();
@@ -84,18 +86,22 @@ window.addEventListener("load", function () {
   closeButtons(login);
   addClickProfileBtnCards();
   changeTextReaderCard(login);
+
+  //register.js
   sendData(addClickRegisterSignUpBtnHandler);
+
+  //header.js
   changePersonIcon(obj, login);
-  //for log in in header
-  addClickLogInProfileHandler(login, obj);
+
+//favorites.js
   addClickCardBtnHandler(login);
   addClickInputRadioHandler();
-  addClickCopyIconHandler();
+
+  //login.js
   addClickBtnSignUpLoginHandler();
 
-  //!delete
-  console.log(_inputs);
-  //getDateFromForm(_inputs)
+  
+
 
   //sticky favorites
   if (window.innerWidth < 769) {

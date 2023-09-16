@@ -5,12 +5,14 @@
   position: fixed;
   z-index: 11;
   background-color: $color-light;
+
   @include font(2rem, 2rem);
 
   &.open {
     display: flex;
   }
 }
+
 .profile__left {
   width: 170px;
   background-color: $color-dark;
@@ -18,8 +20,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include font(2rem, 2rem);
 }
+
 .profile__photo {
   background-color: $color-light;
   width: 80px;
@@ -29,9 +33,9 @@
   align-items: center;
   justify-content: center;
   color: $color-secondary;
-
   text-transform: uppercase;
 }
+
 .profile__name {
   background-color: $color-light;
   width: 80%;
@@ -46,19 +50,23 @@
   & .profile__title {
     @include font(4rem);
 
-    &:after {
+    &::after {
       content: "";
       display: none;
     }
   }
+
   & .profile__icons.open {
     justify-content: start;
   }
 }
+
 .profile__subtitle {
   @include font(2.5rem, $spacing: normal);
+
   margin-bottom: 30px;
 }
+
 .books__list {
   text-transform: capitalize;
   list-style-type: disc;
@@ -76,8 +84,10 @@
 .card__number {
   color: $color-secondary;
 }
+
 .profile__card {
   @include font(2rem, 2rem, $spacing: normal);
+
   display: flex;
   gap: 15px;
   align-items: center;

@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 11;
   background-color: $color-light;
+
   @include font(2rem, 2rem);
 
   &.open {
@@ -20,20 +21,26 @@
   height: 60px;
   background-color: $color-dark;
   color: $color-light;
+
   @include font(4rem, 2rem, $spacing: 0.08rem);
+
   text-transform: uppercase;
 }
+
 .card__block {
   display: grid;
   grid-template-columns: 200px 330px;
   gap: 40px;
-  padding: 30px 40px 40px 40px;
+  padding: 30px 40px 40px;
 }
+
 .card__form {
   @include font(1.5rem, 2rem, $spacing: 0.03rem);
+
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   & p {
     display: flex;
     flex-direction: column;
@@ -49,26 +56,33 @@
 .card__form__code span {
   display: flex;
   gap: 10px;
+
   & input {
     width: 45px;
   }
 }
+
 #card__cvc {
   width: 45px;
 }
+
 .card__cost {
   @include font(2rem, 2rem, $weight: 700, $spacing: 0.2rem);
 }
+
 .modal__card__form__button {
   display: flex;
   gap: 25px;
   align-items: flex-end;
+
   & .button{
     padding: 9px 27px;;
   }
 }
+
 .card__context {
   @include font(1.5rem, 2rem, $spacing: 0.2rem);
+
   color: $color-input;
   max-width: 330px;
 }
