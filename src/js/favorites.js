@@ -8,16 +8,19 @@ const _inputsFavorites = UTILS.getElementsFromDom(".favorites__input");
 const _cardsFavorites = UTILS.getElementsFromDom(".favorites__cards");
 const _cardModal = UTILS.getElementFromDom(".modal__card");
 
-
-
-//todo when log in true then  open модальное окно BUY A LIBRARY CARD
 const addClickCardBtnHandler = (login) => {
   _cardsBtns.forEach((btn) => {
     btn.addEventListener(CONSTANTS.CLICK, function (e) {
       if (login) {
         _overlayModal.classList.add(CONSTANTS.OPEN);
         _cardModal.classList.add(CONSTANTS.OPEN);
-        //console.log(getDateFromForm(_inputs));
+        btn.textContent = "Own";
+        btn.disabled = true;
+        const book = btn.closest(".card").querySelector(".card_subtitle").textContent;
+        let data = UTILS.getDataFromStorage();
+        data.books.push(book);
+        data.countBooks++;
+        window.localStorage.setItem("form", JSON.stringify(data));
       } else {
         _modalLogin.classList.add(CONSTANTS.OPEN);
         _overlayModal.classList.add(CONSTANTS.OPEN);
