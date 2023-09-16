@@ -8,4 +8,9 @@ export const UTILS = {
   deletePointFromSelector(selector) {
     return selector.replace(/\./g, "");
   },
+  getDataFromStorage() {
+    const json = window.localStorage.getItem("form");
+    const data = JSON.parse(json);
+    return data;
+  },
 };
