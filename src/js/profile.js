@@ -18,7 +18,6 @@ const _cardNumber = UTILS.getElementFromDom(".profile__card .card__number");
 const _cardIcon = UTILS.getElementFromDom(".profile__card .card__icon");
 const _profileTitle = UTILS.getElementFromDom(".profile .profile__title");
 
-
 const addClickProfileIconHandler = () => {
   _profileIcon.addEventListener(CONSTANTS.CLICK, function () {
     _profile.classList.toggle(CONSTANTS.OPEN);
@@ -41,11 +40,11 @@ const addClickBodyHandler = () => {
 const addClickRegisterHandler = (login) => {
   _profileSecond.addEventListener(CONSTANTS.CLICK, function (e) {
     if (login) {
-      const data = JSON.parse(window.localStorage.getItem("form"));
+      const data = UTILS.getDataFromStorage();
       data.login = false;
-      console.log(data);
+
       window.localStorage.setItem("form", JSON.stringify(data));
-      console.log(window.localStorage.getItem("form"));
+
       setTimeout(() => {
         window.location.reload();
       }, 100);
@@ -56,12 +55,11 @@ const addClickRegisterHandler = (login) => {
     }
   });
 };
-//todo open modal profile window
+
 //open log in window
 const addClickLogInProfileHandler = (login, data) => {
   _profileFist.addEventListener(CONSTANTS.CLICK, function (e) {
     if (login) {
-
       _overlayModal.classList.add(CONSTANTS.OPEN);
       _profileModal.classList.add(CONSTANTS.OPEN);
       _profile.classList.remove(CONSTANTS.OPEN);
@@ -91,7 +89,7 @@ const addClickOverlayModalHandler = () => {
     if (
       !e.target.closest(".modal__register") &&
       !e.target.closest(".modal__login") &&
-      !e.target.closest(".modal__profile")&&
+      !e.target.closest(".modal__profile") &&
       !e.target.closest(".modal__card")
     ) {
       this.classList.remove(CONSTANTS.OPEN);

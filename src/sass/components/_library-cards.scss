@@ -73,12 +73,15 @@
     padding: 10px 40px;
     margin: 0 0 30px;
   }
+
   &.open {
     display: block;
   }
 }
+
 .form__icons {
   @include font(1rem, 2rem, $spacing: 0.02rem);
+
   display: none;
   padding-bottom: 15px;
 
@@ -88,6 +91,7 @@
     gap: 35px;
   }
 }
+
 .icons__container {
   display: flex;
   flex-direction: column;
@@ -131,6 +135,7 @@
     &:last-child {
       padding: 9px 20px;
     }
+
     &.open {
       display: block;
     }

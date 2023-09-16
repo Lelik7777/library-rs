@@ -68,12 +68,15 @@
   height: 21px;
   display: inline-block;
 }
+
 .visit{
   background-image: url('../assets/icons/Union_visit.svg');
 }
+
 .bonus{
   background-image: url('../assets/icons/Star\ 1.svg');
 }
+
 .book{
   background-image: url('../assets/icons/book.svg');
 }
@@ -82,5 +85,5 @@
   width: 14px;
   height: 12px;
   display: inline-block;
-  background-image: url(../assets/icons/icon\ copy.svg);
+  background-image: url("../assets/icons/icon\ copy.svg");
 }

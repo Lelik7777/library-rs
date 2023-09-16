@@ -54,6 +54,7 @@
 
 .login__text {
   @include font(1rem, normal, 700, $spacing: 0);
+  font-size: 1rem;
 }
 
 .login__link {

@@ -1,4 +1,4 @@
-import { addClickCardBtnHandler, addClickInputRadioHandler, getDateFromForm } from "./js/favorites";
+import { addClickCardBtnHandler, addClickInputRadioHandler } from "./js/favorites";
 import { changePersonIcon } from "./js/header";
 import { implementSticky } from "./js/implementStickyFavorites";
 import "./js/libraryCards";
@@ -12,6 +12,7 @@ import {
   closeBtnOpenIcons,
   closeButtons,
 } from "./js/libraryCards";
+import { addClickBuyBtnCardHandler, addClickCloseBtnModalCardHandler } from "./js/modal_card";
 import { addClickBtnSignUpLoginHandler } from "./js/login";
 import { addHamburgerClickHandler, addNavItemsClickHandler, addOverlayClickHandler } from "./js/popUp";
 import {
@@ -30,72 +31,71 @@ import { addClickRegisterSignUpBtnHandler, sendData } from "./js/register";
 import { addClickArrowLeftHandler, addClickArrowRightHandler, addSliderBtnsHandler } from "./js/slider";
 import { UTILS } from "./js/utils";
 
-//! delete!!!
-const _inputs=UTILS.getElementsFromDom('.card__container__form input');
 //
-const _visitNumbers=UTILS.getElementFromDom(".icons__container .visit__numbers");
+const _visitNumbers = UTILS.getElementsFromDom(".visit__numbers");
+const _booksNumber=UTILS.getElementsFromDom('.books-number');
+const _booksList=UTILS.getElementFromDom('.books__list');
 const startSticky = 1700;
 const endSticky = 4000;
 let login = false;
-// alert(
-//   "Приветствую тебя 👋, проверяющий! Работа над реализацией еще продолжается 👨‍💻. Если есть возможность 🙏,то проверь в четверг,чтобы сейчас не тратить время. В остальном поступай так,как пожелаешь. Хорошего и продуктивного дня!😉"
-// );
+
 window.addEventListener("load", function () {
-  let obj;
-  let data = this.localStorage.getItem("form");
-  console.log(data);
-  if (data || data !== "undefined") {
-    obj = JSON.parse(data);
-    _visitNumbers.textContent=obj.visits;
+  const data = setData();
+
+  if (data) {
+    login = data.login;
+    setDataForProfile(data);
   } else {
-    obj = null;
+    login = data?.login || false;
   }
-
-  if (obj) {
-    login =obj.login;
-  } else {
-    login = obj?.login||false;
-  }
-
-  // if (this.localStorage.getItem("form") !== "null") {
-  //   const dataFromStorage = this.localStorage.getItem("form");
-  //   if (!dataFromStorage === "undefined") data = JSON.parse(dataFromStorage);
-  // }
-
+  //popUp.js
   addHamburgerClickHandler();
   addOverlayClickHandler();
   addNavItemsClickHandler();
+
+  //slider.js
   addSliderBtnsHandler();
   addClickArrowLeftHandler();
   addClickArrowRightHandler();
+
+  //profile.js
   addClickProfileIconHandler(login);
   addClickBodyHandler();
   addClickRegisterHandler(login);
   addClickLoginBtnRegisterHandler();
   addClickRegisterBtnLoginHandler();
-  changeMenuProfile(login, obj);
+  changeMenuProfile(login, data);
   addClickBtnCloseHandler();
   addClickOverlayModalHandler();
-  addClickFormButtonHandler(obj);
+  addClickCopyIconHandler();
+  addClickLogInProfileHandler(login, data);
+
+  //libraryCards.js
+  addClickFormButtonHandler(data);
   addClickSignBtnCardsHandler();
   addClickLogInBtnCardsHandler();
   closeBtnOpenIcons(login);
-  changeInputsPlaceHolder(login, obj);
+  changeInputsPlaceHolder(login, data);
   closeButtons(login);
   addClickProfileBtnCards();
   changeTextReaderCard(login);
+
+  //register.js
   sendData(addClickRegisterSignUpBtnHandler);
-  changePersonIcon(obj, login);
-  //for log in in header
-  addClickLogInProfileHandler(login, obj);
+
+  //header.js
+  changePersonIcon(data, login);
+
+  //favorites.js
   addClickCardBtnHandler(login);
   addClickInputRadioHandler();
-  addClickCopyIconHandler();
+
+  //login.js
   addClickBtnSignUpLoginHandler();
 
-  //!delete
-  console.log(_inputs);
-  //getDateFromForm(_inputs)
+  //modal_card.js
+  addClickBuyBtnCardHandler();
+  addClickCloseBtnModalCardHandler();
 
   //sticky favorites
   if (window.innerWidth < 769) {
@@ -126,3 +126,25 @@ window.addEventListener("resize", function () {
     };
   }
 });
+
+function setData() {
+  let data;
+  let json = window.localStorage.getItem("form");
+  if (json || json !== "undefined") {
+    data = JSON.parse(json);
+  } else {
+    data = null;
+  }
+  return data;
+}
+
+function setDataForProfile(data) {
+  console.log(_visitNumbers);
+ _visitNumbers.forEach(node=>node.textContent = data.visits);
+  _booksNumber.forEach(node=>node.textContent=data.countBooks);
+  data.books.forEach(book=>{
+    const li=document.createElement('li');
+    li.textContent=book;
+    _booksList.append(li);
+  })
+}

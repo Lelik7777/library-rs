@@ -43,6 +43,8 @@ const getDataFromForm = () => {
       form.cardNum = getHexNum();
       form.login = true;
       form.visits=1;
+      form.books=[];
+      form.countBooks=0;
     });
   });
 
