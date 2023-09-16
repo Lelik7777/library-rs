@@ -26,6 +26,9 @@ const addClickBuyBtnCardHandler = () => {
     ) {
       _overlayModal.classList.remove(CONSTANTS.OPEN);
       _modalCard.classList.remove(CONSTANTS.OPEN);
+
+      const data = UTILS.getDataFromStorage();
+
       setTimeout(() => {
         location.reload();
       }, 10);
@@ -46,6 +49,5 @@ const fillForm = () => {
   form.city = _city.value;
   return form;
 };
-
 
 export { addClickBuyBtnCardHandler };
