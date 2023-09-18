@@ -40,11 +40,24 @@ const endSticky = 4000;
 let login = false;
 
 window.addEventListener("load", function () {
-  const data = setData();
+  let data;
+  let json = window.localStorage.getItem("form");
+  if (json || json !== "undefined") {
+    data = JSON.parse(json);
+  } else {
+    data = null;
+  }
 
   if (data) {
     login = data.login;
-    setDataForProfile(data);
+    _visitNumbers.forEach(node=>node.textContent = data.visits);
+    _booksNumber.forEach(node=>node.textContent=data.countBooks);
+    data?.books.forEach(book=>{
+      const li=document.createElement('li');
+      li.textContent=book;
+      _booksList.append(li);
+    })
+   // setDataForProfile(data);
   } else {
     login = data?.login || false;
   }
