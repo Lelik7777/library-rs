@@ -137,14 +137,17 @@ function setData() {
   }
   return data;
 }
-
+//todo fix bug on gh pages with this function
 function setDataForProfile(data) {
   console.log(_visitNumbers);
- _visitNumbers.forEach(node=>node.textContent = data.visits);
-  _booksNumber.forEach(node=>node.textContent=data.countBooks);
-  data.books.forEach(book=>{
-    const li=document.createElement('li');
-    li.textContent=book;
-    _booksList.append(li);
-  })
+  if(data!=='undefined'){
+    _visitNumbers.forEach(node=>node.textContent = data.visits);
+    _booksNumber.forEach(node=>node.textContent=data.countBooks);
+    data?.books.forEach(book=>{
+      const li=document.createElement('li');
+      li.textContent=book;
+      _booksList.append(li);
+    })
+  }
+
 }
